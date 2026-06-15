@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>html{background:#17171b}</style>
+  <title>Film — Jeremy Ivan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&family=Space+Grotesk:wght@500&display=swap" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <a class="home-btn" href="/" aria-label="Home"><span class="glyph" aria-hidden="true">⌂</span> Home</a>
+  <div class="page">
+    <div class="boundary boundary--top" data-boundary="top"></div>
+    <header class="page__head" data-head>
+      <h1 class="page__title display" data-title>Film</h1>
+      <span class="count" data-count></span>
+    </header>
+    <section class="grid" data-grid></section>
+    <div class="boundary boundary--bottom" data-boundary="bottom"></div>
+  </div>
+  <script type="module">
+    import { initCategoryPage } from '/src/js/grid.js';
+    initCategoryPage('Film');
+  </script>
+</body>
+</html>

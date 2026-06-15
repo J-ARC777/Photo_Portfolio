@@ -1,0 +1,21 @@
+{
+  "name": "photography-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Photography portfolio + print-sales site (Phase 1) and its local content tool. See photography-portfolio-design-spec.md.",
+  "scripts": {
+    "dev": "vite web",
+    "build": "vite build web",
+    "preview": "vite preview web",
+    "tool": "node tool/server.js",
+    "placeholders": "node tool/generate-placeholders.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

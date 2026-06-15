@@ -1,0 +1,37 @@
+/* §4.1 Color + §4.2 Typography — the fixed neutral palette.
+   Color is supplied by the photographs, not the chrome.
+   The only fixed accent is "Starlight amber"; in single-work views a
+   photo-derived accent (--accent) temporarily overrides it. */
+:root {
+  --base: #17171b;          /* museum wall, charcoal lifted off black */
+  --surface: #212126;
+  --elevated: #2b2b31;
+  --hairline: rgba(255, 255, 255, 0.11);
+
+  --text-1: #edecea;        /* primary */
+  --text-2: #c8c7c2;        /* secondary */
+  --text-3: #95948f;        /* tertiary / metadata */
+
+  --amber: #e0a94e;         /* fixed interaction/focus accent */
+  --accent: var(--amber);   /* single-work views override this per photo */
+
+  /* Type — two roles, two weights (§4.2). Tracking scales inversely w/ size. */
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --track-title: 0.11em;
+  --track-nav: 0.17em;
+  --track-label: 0.22em;
+
+  --gutter: 14px;           /* constant grid gutter (§5.4) */
+  --row-target: 320px;      /* justified target row height */
+  --row-min: 200px;
+  --row-max: 460px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1); /* damped, never free (§4.4) */
+  --dur: 420ms;
+
+  /* page-load fade-in timing (§6) */
+  --vt-dur: 2000ms;
+  --vt-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
