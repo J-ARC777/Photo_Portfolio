@@ -180,9 +180,11 @@ function wakeBehaviour(btn, frame, cluster, state) {
 }
 
 function navigate(category, slug) {
-  // pass the clicked image so it leads on the category page (?lead=slug)
-  const href = pageFor(category) + (slug ? `?lead=${encodeURIComponent(slug)}` : '');
-  window.location.href = href;
+  const params = new URLSearchParams();
+  if (slug) params.set('lead', slug);
+  if (category === 'Astro') params.set('view', 'grid');
+  const qs = params.toString();
+  window.location.href = pageFor(category) + (qs ? '?' + qs : '');
 }
 
 // --- starfield locked to the hero box (bounds + parallax frame track the hero) ---

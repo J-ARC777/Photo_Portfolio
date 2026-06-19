@@ -68,7 +68,7 @@ const server = createServer(async (req, res) => {
         shadowDensity: derived.shadowDensity,
         accent: derived.accent,
         ...(data.category === 'Astro'
-          ? { raCenter: num(data.raCenter), decCenter: num(data.decCenter), rotation: 0, angularSize: num(data.angularSize) }
+          ? { raCenter: num(data.raCenter), decCenter: num(data.decCenter), fovDeg: num(data.fovDeg), posAngle: num(data.posAngle), skyMapPin: data.skyMapPin !== false }
           : {}),
         commerce: { printSizes: [], substrates: [], pricePer: {}, edition: null, printAdvisory: null },
         renditions: [{ role: 'display', colorSpace: 'srgb', profile: null, path: derived.web.src, dimensions: derived.dimensions }],

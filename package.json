@@ -9,7 +9,9 @@
     "build": "vite build web",
     "preview": "vite preview web",
     "tool": "node tool/server.js",
-    "placeholders": "node tool/generate-placeholders.js"
+    "placeholders": "node tool/generate-placeholders.js",
+    "milkyway": "node tool/generate-milkyway.js",
+    "starcatalog": "node tool/generate-star-catalog.js"
   },
   "dependencies": {
     "sharp": "^0.33.5",

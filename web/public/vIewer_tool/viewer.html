@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wall Viewer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0a;
+      color: #d8d8d8;
+      font: 12px/1.5 'system-ui', sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100dvh;
+      overflow: hidden;
+    }
+
+    /* ── Controls bar ─────────────────────────────────────────────────────── */
+    #controls {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 8px 16px;
+      background: #131313;
+      border-bottom: 1px solid #222;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
+    .ctrl { display: flex; flex-direction: column; gap: 4px; }
+
+    .ctrl-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #555;
+    }
+
+    .ctrl-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    input[type="range"] {
+      width: 110px;
+      accent-color: #c8a96e;
+      cursor: pointer;
+    }
+
+    input[type="color"] {
+      width: 36px;
+      height: 24px;
+      border: 1px solid #2a2a2a;
+      border-radius: 3px;
+      background: none;
+      cursor: pointer;
+      padding: 1px;
+    }
+
+    .file-btn {
+      font-size: 11px;
+      color: #888;
+      background: #1c1c1c;
+      border: 1px solid #2a2a2a;
+      border-radius: 3px;
+      padding: 3px 8px;
+      cursor: pointer;
+    }
+
+    .file-btn:hover { border-color: #444; color: #bbb; }
+
+    .val {
+      font-size: 10px;
+      color: #666;
+      font-variant-numeric: tabular-nums;
+      min-width: 28px;
+    }
+
+    .tag {
+      font-size: 9px;
+      color: #444;
+    }
+
+    #status {
+      font-size: 10px;
+      color: #444;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    #status.ready  { color: #5a8a5a; }
+    #status.warn   { color: #8a6a2a; }
+    #status.error  { color: #8a3a3a; }
+
+    /* ── Canvas area ──────────────────────────────────────────────────────── */
+    #canvas-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #080808;
+    }
+
+    #canvas {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      image-rendering: high-quality;
+    }
+
+    /* ── Hidden real file inputs ──────────────────────────────────────────── */
+    input[type="file"] { display: none; }
+  </style>
+</head>
+<body>
+
+<div id="controls">
+
+  <div class="ctrl">
+    <span class="ctrl-label">Wall Color</span>
+    <input type="color" id="wallColor" value="#c8b49a">
+  </div>
+
+  <div class="ctrl">
+    <span class="ctrl-label">Color Blend</span>
+    <div class="ctrl-row">
+      <input type="range" id="colorBlend" min="0" max="0.75" step="0.01" value="0.75">
+      <span class="val" id="blendVal">0.80</span>
+    </div>
+  </div>
+
+  <div class="ctrl">
+    <span class="ctrl-label">Sun angle</span>
+    <div class="ctrl-row">
+      <input type="range" id="dayNight" min="0" max="89" step="1" value="45">
+      <span class="val" id="frameVal">45</span>
+    </div>
+  </div>
+
+  <div class="ctrl">
+    <span class="ctrl-label">Mask</span>
+    <label class="file-btn" for="maskFile" id="maskLabel">Choose…</label>
+    <input type="file" id="maskFile" accept="image/*">
+  </div>
+
+  <div class="ctrl">
+    <span class="ctrl-label">Photo</span>
+    <label class="file-btn" for="photoFile" id="photoLabel">Choose…</label>
+    <input type="file" id="photoFile" accept="image/*">
+  </div>
+
+  <span id="status">Loading wall frames…</span>
+</div>
+
+<div id="canvas-wrap">
+  <canvas id="canvas" width="2048" height="2048"></canvas>
+</div>
+
+<!-- Hidden offscreen buffer (used as temp compositing layer) -->
+<canvas id="offCanvas" width="2048" height="2048" style="display:none"></canvas>
+
+<script>
+// ── Constants ──────────────────────────────────────────────────────────────
+const WALL_COUNT = 90;
+const SIZE   = 2048;
+const WALL_H = 1890; // wall area only — excludes baseboard + floor
+
+// ── Canvas contexts ────────────────────────────────────────────────────────
+const canvas  = document.getElementById('canvas');
+const ctx     = canvas.getContext('2d', { alpha: false });
+
+const offCanvas = document.getElementById('offCanvas');
+const offCtx    = offCanvas.getContext('2d', { alpha: true });
+
+const statusEl = document.getElementById('status');
+
+// ── State ──────────────────────────────────────────────────────────────────
+const state = {
+  wallColor:   [200, 180, 154],   // RGB from color picker
+  colorBlend:  0.80,              // 0=no tint, 1=full multiply
+  frame:       0,                 // viewer frame 0=day … 89=night
+  photo:       null,              // HTMLImageElement
+  avgColor:    [128, 128, 128],   // average RGB of current photo (for bounce tint)
+  maskBounds:  null,              // { minX, minY, mw, mh, cx, cy }
+  frameRect:   null,              // { x, y, w, h } in render space
+};
+
+// Frame image arrays (index 0 = Wall/0001 / Image0001, index 89 = Wall/0090 / Image0090)
+const wallFrames   = new Array(WALL_COUNT).fill(null);
+const imageFrames  = new Array(WALL_COUNT).fill(null);
+const bounceFrames = new Array(WALL_COUNT).fill(null);
+
+let wallLoaded   = 0;
+let imageLoaded  = 0;
+let bounceLoaded = 0;
+let aoImg        = null;   // single static AO+rim pass
+let renderDirty  = false;
+
+
+// ── Image loading ──────────────────────────────────────────────────────────
+function loadImg(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload  = () => resolve(img);
+    img.onerror = () => reject(new Error(src));
+    img.src = src;
+  });
+}
+
+async function loadAllWallFrames() {
+  const tasks = Array.from({ length: WALL_COUNT }, (_, i) => {
+    const n = String(i + 1).padStart(4, '0');
+    return loadImg(`Wall/Image${n}.jpg`).then(img => {
+      wallFrames[i] = img;
+      wallLoaded++;
+      setStatus(`Loading wall… ${wallLoaded}/${WALL_COUNT}`);
+    }).catch(() => {});
+  });
+  await Promise.all(tasks);
+}
+
+async function loadAllImageFrames() {
+  const tasks = Array.from({ length: WALL_COUNT }, (_, i) => {
+    const n = String(i + 1).padStart(4, '0');
+    return loadImg(`Image/Image${n}.jpg`)
+      .then(img => { imageFrames[i] = img; imageLoaded++; })
+      .catch(() => {});
+  });
+  await Promise.all(tasks);
+}
+
+async function loadAllBounceFrames() {
+  // Bounce pass — may not exist yet; silently skip missing frames
+  const tasks = Array.from({ length: WALL_COUNT }, (_, i) => {
+    const n = String(i + 1).padStart(4, '0');
+    return loadImg(`Bounce/${n}.jpg`)
+      .then(img => { bounceFrames[i] = img; bounceLoaded++; })
+      .catch(() => {});
+  });
+  await Promise.all(tasks);
+}
+
+
+// ── Average color ──────────────────────────────────────────────────────────
+// Downsamples to 64×64 and averages all pixels. Fast enough to run on photo load.
+function computeAvgColor(img) {
+  const S = 64;
+  const c = document.createElement('canvas');
+  c.width = c.height = S;
+  c.getContext('2d').drawImage(img, 0, 0, S, S);
+  const { data } = c.getContext('2d').getImageData(0, 0, S, S);
+  let r = 0, g = 0, b = 0;
+  const n = S * S;
+  for (let i = 0; i < n * 4; i += 4) { r += data[i]; g += data[i+1]; b += data[i+2]; }
+  return [Math.round(r / n), Math.round(g / n), Math.round(b / n)];
+}
+
+
+// ── Mask analysis ──────────────────────────────────────────────────────────
+// Returns the bounding box of white pixels (> 128 on red channel).
+// Coordinates are normalized to SIZE (2048) so they work with the render space
+// regardless of the mask file's actual pixel dimensions.
+function analyzeMask(img) {
+  const w = img.naturalWidth;
+  const h = img.naturalHeight;
+
+  const tmp = document.createElement('canvas');
+  tmp.width  = w;
+  tmp.height = h;
+  tmp.getContext('2d').drawImage(img, 0, 0);
+  const { data } = tmp.getContext('2d').getImageData(0, 0, w, h);
+
+  let minX = w, maxX = 0, minY = h, maxY = 0;
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      if (data[(y * w + x) * 4] > 128) {
+        if (x < minX) minX = x;
+        if (x > maxX) maxX = x;
+        if (y < minY) minY = y;
+        if (y > maxY) maxY = y;
+      }
+    }
+  }
+
+  if (minX > maxX) return null;
+
+  // Scale to render space (SIZE × SIZE) in case mask file differs in resolution
+  const scaleX = SIZE / w;
+  const scaleY = SIZE / h;
+
+  return {
+    minX: Math.round(minX * scaleX),
+    minY: Math.round(minY * scaleY),
+    mw:   Math.round((maxX - minX + 1) * scaleX),
+    mh:   Math.round((maxY - minY + 1) * scaleY),
+    cx:   ((minX + maxX) / 2) * scaleX,
+    cy:   ((minY + maxY) / 2) * scaleY,
+  };
+}
+
+
+// ── Frame rect computation ─────────────────────────────────────────────────
+// Heuristic: landscape → maintain mask height; portrait → maintain mask width.
+// Center stays at mask centroid.
+function computeFrameRect(bounds, photoW, photoH) {
+  const { cx, cy, mw, mh } = bounds;
+  const ar = photoW / photoH;
+
+  let fw, fh;
+  if (photoW >= photoH) {
+    // Landscape or square: lock height, let width follow AR
+    fh = mh;
+    fw = Math.round(fh * ar);
+  } else {
+    // Portrait: lock width, let height follow AR
+    fw = mw;
+    fh = Math.round(fw / ar);
+  }
+
+  return {
+    x: Math.round(cx - fw / 2),
+    y: Math.round(cy - fh / 2),
+    w: fw,
+    h: fh,
+  };
+}
+
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function scheduleRender() {
+  if (!renderDirty) {
+    renderDirty = true;
+    requestAnimationFrame(doRender);
+  }
+}
+
+function doRender() {
+  renderDirty = false;
+
+  const { frame, wallColor, colorBlend, photo, maskBounds, frameRect } = state;
+
+  // Viewer frame 0 = day = Wall/0090 (brightest, index 89)
+  // Viewer frame 89 = night = Wall/0001 (darkest, index 0)
+  const renderIdx = (WALL_COUNT - 1) - frame;
+  const wallFrame = wallFrames[renderIdx];
+
+  if (!wallFrame) {
+    setStatus(`Wall frame ${renderIdx + 1} not loaded`, 'warn');
+    return;
+  }
+
+  // ── Step 1: Draw wall ────────────────────────────────────────────────────
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.globalAlpha = 1.0;
+  ctx.drawImage(wallFrame, 0, 0, SIZE, SIZE);
+
+  // ── Step 2: Multiply wall by (soft) wall color ───────────────────────────
+  // soft = lerp(white, wallColor, blend) so blend=0 → identity, blend=1 → full tint
+  const sr = Math.round(255 + (wallColor[0] - 255) * colorBlend);
+  const sg = Math.round(255 + (wallColor[1] - 255) * colorBlend);
+  const sb = Math.round(255 + (wallColor[2] - 255) * colorBlend);
+  ctx.globalCompositeOperation = 'multiply';
+  ctx.fillStyle = `rgb(${sr},${sg},${sb})`;
+  ctx.fillRect(0, 0, SIZE, WALL_H);
+
+  // ── Step 2.5: AO + rimlight — full canvas, before photo so shadow hits wall ─
+  // soft-light: neutral gray=no change, dark=AO shadow, bright=rim highlight.
+  if (aoImg) {
+    ctx.globalCompositeOperation = 'soft-light';
+    ctx.globalAlpha = 1.0;
+    ctx.drawImage(aoImg, 0, 0, SIZE, SIZE);
+    ctx.globalCompositeOperation = 'source-over';
+  }
+
+  // Nothing more to do without mask + photo + image render
+  if (!photo || !maskBounds || !frameRect) {
+    setStatus('Load mask + photo to composite', 'warn');
+    ctx.globalCompositeOperation = 'source-over';
+    return;
+  }
+
+  const imageFrame = imageFrames[renderIdx];
+  if (!imageFrame) {
+    setStatus(`Image render frame ${renderIdx + 1} not ready`, 'warn');
+    ctx.globalCompositeOperation = 'source-over';
+    return;
+  }
+
+  const { minX, minY, mw, mh, cx, cy } = maskBounds;
+  const { x, y, w, h } = frameRect;
+
+  // Shared crop geometry — same for image renders and bounce pass
+  const frameAR = w / h;
+  const maskAR  = mw / mh;
+  let cropW, cropH;
+  if (frameAR >= maskAR) {
+    cropW = mw;
+    cropH = Math.round(mw / frameAR);
+  } else {
+    cropH = mh;
+    cropW = Math.round(mh * frameAR);
+  }
+  const cropX = Math.round(cx - cropW / 2);
+  const cropY = Math.round(cy - cropH / 2);
+
+  // ── Step 3: Bounce light onto wall ──────────────────────────────────────
+  // The bounce pass (Blender indirect light, rendered with a neutral white card)
+  // is tinted by the image's average color then added to the wall.
+  // Same crop as the image card so the shadow/bleed aligns with the frame rect.
+  const bounceFrame = bounceFrames[renderIdx];
+  if (bounceFrame) {
+    const [ar, ag, ab] = state.avgColor;
+    offCtx.globalCompositeOperation = 'source-over';
+    offCtx.globalAlpha = 1.0;
+    offCtx.clearRect(0, 0, SIZE, SIZE);
+    offCtx.drawImage(
+      bounceFrame,
+      cropX, cropY, cropW, cropH,
+      x,     y,     w,    h
+    );
+    // Tint bounce by image average color
+    offCtx.globalCompositeOperation = 'multiply';
+    offCtx.fillStyle = `rgb(${ar},${ag},${ab})`;
+    offCtx.fillRect(x, y, w, h);
+    // Add tinted bounce onto colored wall
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.drawImage(offCanvas, 0, 0);
+  }
+
+  // ── Step 4: Build lit photo on offscreen canvas ──────────────────────────
+  // 4a. Crop image render to photo AR, scale to frame rect — brighten ~10%.
+  offCtx.globalCompositeOperation = 'source-over';
+  offCtx.globalAlpha = 1.0;
+  offCtx.clearRect(0, 0, SIZE, SIZE);
+  offCtx.filter = 'brightness(1.1)';
+  offCtx.drawImage(imageFrame, cropX, cropY, cropW, cropH, x, y, w, h);
+  offCtx.filter = 'none';
+
+  // 4b. Multiply photo into the lit card → photo inherits 3D lighting.
+  offCtx.globalCompositeOperation = 'multiply';
+  offCtx.drawImage(photo, x, y, w, h);
+
+  // ── Step 5: Place lit photo directly onto wall (frame rect only) ────────
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.globalAlpha = 1.0;
+  ctx.drawImage(offCanvas, x, y, w, h, x, y, w, h);
+
+  setStatus(
+    `Frame ${frame + 1}/90 · ${imageLoaded} img · AO ${aoImg ? '✓' : '—'} · ${bounceLoaded} bounce · ` +
+    `${w}×${h} @ (${x},${y})`,
+    'ready'
+  );
+}
+
+
+// ── Status helper ──────────────────────────────────────────────────────────
+function setStatus(msg, cls = '') {
+  statusEl.textContent = msg;
+  statusEl.className = cls;
+}
+
+
+// ── Controls ───────────────────────────────────────────────────────────────
+function hexToRgb(hex) {
+  return [
+    parseInt(hex.slice(1, 3), 16),
+    parseInt(hex.slice(3, 5), 16),
+    parseInt(hex.slice(5, 7), 16),
+  ];
+}
+
+document.getElementById('wallColor').addEventListener('input', e => {
+  state.wallColor = hexToRgb(e.target.value);
+  scheduleRender();
+});
+
+document.getElementById('colorBlend').addEventListener('input', e => {
+  state.colorBlend = parseFloat(e.target.value);
+  document.getElementById('blendVal').textContent = state.colorBlend.toFixed(2);
+  scheduleRender();
+});
+
+document.getElementById('dayNight').addEventListener('input', e => {
+  state.frame = parseInt(e.target.value, 10);
+  document.getElementById('frameVal').textContent = state.frame;
+  scheduleRender();
+});
+
+document.getElementById('maskFile').addEventListener('change', async e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  document.getElementById('maskLabel').textContent = file.name;
+  const img = await loadImg(URL.createObjectURL(file));
+  state.maskBounds = analyzeMask(img);
+  if (!state.maskBounds) {
+    setStatus('No white pixels found in mask', 'error');
+    return;
+  }
+  if (state.photo) {
+    state.frameRect = computeFrameRect(state.maskBounds, state.photo.naturalWidth, state.photo.naturalHeight);
+  }
+  scheduleRender();
+});
+
+document.getElementById('photoFile').addEventListener('change', async e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  document.getElementById('photoLabel').textContent = file.name;
+  const img = await loadImg(URL.createObjectURL(file));
+  state.photo    = img;
+  state.avgColor = computeAvgColor(img);
+  if (state.maskBounds) {
+    state.frameRect = computeFrameRect(state.maskBounds, img.naturalWidth, img.naturalHeight);
+  }
+  scheduleRender();
+});
+
+
+// ── Default asset loader ────────────────────────────────────────────────────
+async function loadDefaultMask() {
+  const img = await loadImg('MASK.jpg').catch(() => null);
+  if (!img) return;
+  state.maskBounds = analyzeMask(img);
+  document.getElementById('maskLabel').textContent = 'MASK.jpg';
+}
+
+async function loadDefaultPhoto() {
+  const img = await loadImg('Image/Image0001.jpg').catch(() => null);
+  if (!img) return;
+  state.photo    = img;
+  state.avgColor = computeAvgColor(img);
+  document.getElementById('photoLabel').textContent = 'Image0001.jpg';
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────
+(async () => {
+  await Promise.all([
+    loadAllWallFrames(),
+    loadAllImageFrames(),
+    loadAllBounceFrames(),
+    loadDefaultMask(),
+    loadDefaultPhoto(),
+    loadImg('Image/Image_AO.png').then(img => { aoImg = img; }).catch(() => {}),
+  ]);
+
+  // Compute frame rect now that both mask and photo are loaded
+  if (state.maskBounds && state.photo) {
+    state.frameRect = computeFrameRect(
+      state.maskBounds,
+      state.photo.naturalWidth,
+      state.photo.naturalHeight
+    );
+  }
+
+  setStatus(
+    `${wallLoaded} wall · ${imageLoaded} img · AO ${aoImg ? '✓' : '—'} · ready`,
+    'ready'
+  );
+  scheduleRender();
+})();
+</script>
+</body>
+</html>

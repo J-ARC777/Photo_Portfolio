@@ -3,7 +3,7 @@
 
 import {
   loadManifest, worksIn, countIn, neighbourCategory, neighbourHref,
-  navSampleSrc, displaySrc,
+  navSampleSrc,
 } from './manifest.js';
 import { buildDetail } from './detail.js';
 import { prefersReduced, fadeIn } from './transitions.js';
@@ -151,10 +151,11 @@ function makeCell(w, width, isLastRow, gridEl, works, fadeIndex) {
 
   // the grid preserves NATIVE aspect — use the display rendition, never the 3:2
   // button crop (fidelity line §7; only the splash teaser uses the crop)
-  const src = displaySrc(w);
+  const src = w.web?.src || null;
   if (src) {
     const img = document.createElement('img');
     img.src = src;
+    if (w.accent) img.style.background = w.accent; // fills letterbox on object-fit:contain
     if (w.web?.srcset) { img.srcset = w.web.srcset; img.sizes = `${Math.round(width)}px`; }
     img.alt = w.alt || w.caption || w.title || 'photograph';
     img.loading = 'lazy';
@@ -202,7 +203,7 @@ function openDetail(works, index, gridEl) {
 }
 
 function step(works, index, dir, gridEl) {
-  const next = (index + dir + works.length) % works.length; // reading-order step
+  const next = (index + dir + works.length) % works.length;
   openDetail(works, next, gridEl);
 }
 

@@ -49,7 +49,7 @@ void main() {
 
   float baseSize  = mix(uTightBaseSize, uWideBaseSize, vLuminance);
   float rawSize   = clamp(baseSize, uSizeMin, uSizeMax);
-  float fovFactor = 15.0 / clamp(uFov, 5.0, 15.0);
+  float fovFactor = pow(clamp(75.0 / uFov, 1.0, 8.0), 0.4);
 
   vec4 mvPos = modelViewMatrix * vec4(position, 1.0);
   gl_Position = projectionMatrix * mvPos;
@@ -95,6 +95,25 @@ uniform float uBloomLumMin;
 uniform float uBloomLumMax;
 uniform float uBloomGamma;
 uniform float uTightCrop;
+uniform float uColorSat;
+uniform float uHueShift;
+uniform float uWarmShift;
+
+vec3 hueShift(vec3 col, float shift, float warmShift) {
+  float y = dot(col, vec3(0.299,  0.587,  0.114));
+  float i = dot(col, vec3(0.596, -0.275, -0.321));
+  float q = dot(col, vec3(0.212, -0.523,  0.311));
+  float c = sqrt(i*i + q*q);
+  // warm colors (positive I = orange/yellow) get extra negative shift → more orange
+  float warmness = c > 0.001 ? clamp(i / c, 0.0, 1.0) : 0.0;
+  float a = atan(q, i) + shift - warmness * warmShift;
+  i = c * cos(a); q = c * sin(a);
+  return vec3(
+    y + 0.956*i + 0.621*q,
+    y - 0.272*i - 0.647*q,
+    y - 1.107*i + 1.704*q
+  );
+}
 
 void main() {
   if (vAlpha < 0.01) discard;
@@ -151,16 +170,20 @@ void main() {
   vec3 col = maxChan > 1.0 ? dodged / maxChan : dodged;
 
   float mean = (col.r + col.g + col.b) / 3.0;
-  col = mean + (col - mean) * mix(0.5, 1.4, vLuminance);
-  col = max(col, vec3(0.0));
+  col = mean + (col - mean) * mix(0.5, 1.4, vLuminance) * uColorSat;
+  col = max(hueShift(col, uHueShift, uWarmShift), vec3(0.0));
+
+  // Blend hotspot toward white — colour lives in the outer halo, core stays neutral
+  col = mix(col, vec3(0.8), smoothstep(0.25, 0.80, core));
 
   gl_FragColor = vec4(col, luma * vAlpha * uExposure);
 }
 `;
 
 export class StarField {
-  constructor(catalog) {
+  constructor(catalog, onTextureLoad) {
     this.catalog = catalog;
+    this._onTextureLoad = onTextureLoad;
     this._visible = new Float32Array(catalog.starCount).fill(1);
     this._textures = this._loadStarTextures();
     this._build();
@@ -201,6 +224,7 @@ export class StarField {
       tex.magFilter = THREE.LinearFilter;
       tex.wrapS = tex.wrapT = THREE.ClampToEdgeWrapping;
       if (this.material) this.material.uniforms[uniform].value = tex;
+      if (this._onTextureLoad) this._onTextureLoad();
     };
     loader.load(`${base}star_2d_tight.png`, apply('uStarTex'));
     loader.load(`${base}star_2d_wide.png`, apply('uStarTexWide'));
@@ -224,27 +248,30 @@ export class StarField {
         // Skyspace's tuned values
         uMinMag:        { value: 7.0 },
         uMaxDist:       { value: 1e9 },        // distances disabled (all 0)
-        uSizeScale:     { value: 1.0 },
+        uSizeScale:     { value: 1.1 },
         uSizeMin:       { value: 2.6 },
-        uSizeMax:       { value: 110.0 },
-        uTightBaseSize: { value: 2.0 },
-        uWideBaseSize:  { value: 21.0 },
+        uSizeMax:       { value: 36.0 },
+        uTightBaseSize: { value: 1.5 },
+        uWideBaseSize:  { value: 20.0 },
         uBodyMagMin:    { value: 2.0 },
         uBodyMagMax:    { value: 7.1 },
-        uTexGamma:      { value: 2.2 },
-        uExposure:      { value: 0.4 },
+        uTexGamma:      { value: 3.0 },
+        uExposure:      { value: 3.2 },
         uFov:           { value: 70.0 },
         uViewport:      { value: new THREE.Vector2(window.innerWidth, window.innerHeight).multiplyScalar(dpr) },
         uPrevViewProj:  { value: new THREE.Matrix4() },
         uMotionBlur:    { value: 0.6 },
         uStarTex:       { value: this._textures.tight },
         uStarTexWide:   { value: this._textures.wide },
-        uBloomScale:    { value: 6.0 },
-        uBloomFadeBase: { value: 0.05 },
+        uBloomScale:    { value: 3.3 },
+        uBloomFadeBase: { value: 0.06 },
         uBloomLumMin:   { value: 0.0 },
         uBloomLumMax:   { value: 0.35 },
-        uBloomGamma:    { value: 12.0 },
+        uBloomGamma:    { value: 8.0 },
         uTightCrop:     { value: 0.40 },
+        uColorSat:      { value: 0.45 },
+        uHueShift:      { value: -0.25 },
+        uWarmShift:     { value: 0.28 },
       },
       vertexColors: true,
       transparent: true,
@@ -257,6 +284,7 @@ export class StarField {
   }
 
   setFov(fov) { this.material.uniforms.uFov.value = fov; }
+  resetMotion() { this._motionCam = null; }
   setExposure(v) { this.material.uniforms.uExposure.value = v; }
   setResolution(w, h) {
     const pr = Math.min(window.devicePixelRatio || 1, 2);
@@ -279,6 +307,33 @@ export class StarField {
     this._textures.tight.dispose();
     this._textures.wide.dispose();
   }
+}
+
+// Load the pre-generated real-star binary (tool/generate-star-catalog.js).
+// Format: [uint32 starCount][float32 x,y,z,r,g,b,mag × starCount] on a unit sphere.
+export async function loadRealCatalog(radius = 800) {
+  const base = import.meta.env.BASE_URL;
+  const buf  = await fetch(`${base}data/stars.bin`).then(r => r.arrayBuffer());
+  const starCount = new DataView(buf).getUint32(0, true);
+  const floats    = new Float32Array(buf, 4);   // 7 floats per star
+
+  const positions  = new Float32Array(starCount * 3);
+  const colors     = new Float32Array(starCount * 3);
+  const magnitudes = new Float32Array(starCount);
+  const distances  = new Float32Array(starCount); // all 0 — stars sit on the shell
+
+  for (let i = 0; i < starCount; i++) {
+    const b = i * 7;
+    positions[i*3]   = floats[b]   * radius;
+    positions[i*3+1] = floats[b+1] * radius;
+    positions[i*3+2] = floats[b+2] * radius;
+    colors[i*3]   = floats[b+3];
+    colors[i*3+1] = floats[b+4];
+    colors[i*3+2] = floats[b+5];
+    magnitudes[i] = floats[b+6];
+  }
+
+  return { starCount, positions, colors, magnitudes, distances };
 }
 
 // Synthetic catalog on a sphere (radius R). No real distances — every star sits
