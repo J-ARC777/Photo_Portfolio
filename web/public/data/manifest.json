@@ -55,29 +55,8 @@
       ],
       "web": {
         "src": "works/orion-nebula/display-1600.jpg",
-        "srcset": "works/orion-nebula/display-400.jpg 400w, works/orion-nebula/display-800.jpg 800w, works/orion-nebula/display-1200.jpg 1200w, works/orion-nebula/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/orion-nebula/display-400.jpg",
-            "webp": "works/orion-nebula/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/orion-nebula/display-800.jpg",
-            "webp": "works/orion-nebula/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/orion-nebula/display-1200.jpg",
-            "webp": "works/orion-nebula/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/orion-nebula/display-1600.jpg",
-            "webp": "works/orion-nebula/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/orion-nebula/display-400.webp 400w, works/orion-nebula/display-800.webp 800w, works/orion-nebula/display-1200.webp 1200w, works/orion-nebula/display-1600.webp 1600w",
+        "largest": "works/orion-nebula/display-1600.webp",
         "buttonCrop": "works/orion-nebula/button.jpg",
         "navSample": "works/orion-nebula/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBv/EABkQAQEAAwEAAAAAAAAAAAAAAAEAAhEhEv/EABYBAQEBAAAAAAAAAAAAAAAAAAIAA//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDPbmPIdorKrbhDZJvkU9xRR//Z"
@@ -131,32 +110,11 @@
       ],
       "web": {
         "src": "works/andromeda/display-1600.jpg",
-        "srcset": "works/andromeda/display-400.jpg 400w, works/andromeda/display-800.jpg 800w, works/andromeda/display-1200.jpg 1200w, works/andromeda/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/andromeda/display-400.jpg",
-            "webp": "works/andromeda/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/andromeda/display-800.jpg",
-            "webp": "works/andromeda/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/andromeda/display-1200.jpg",
-            "webp": "works/andromeda/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/andromeda/display-1600.jpg",
-            "webp": "works/andromeda/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/andromeda/display-400.webp 400w, works/andromeda/display-800.webp 800w, works/andromeda/display-1200.webp 1200w, works/andromeda/display-1600.webp 1600w",
+        "largest": "works/andromeda/display-1600.webp",
         "buttonCrop": "works/andromeda/button.jpg",
         "navSample": "works/andromeda/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAZEAEBAAMBAAAAAAAAAAAAAAAAAQIREiH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AOGvHmT1mTBdO2bCQCr/2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAYEAEBAQEBAAAAAAAAAAAAAAAAAQIRIf/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A4a8zMnrMusF09WdCQCr/2Q=="
       },
       "placeholder": true
     },
@@ -207,32 +165,11 @@
       ],
       "web": {
         "src": "works/rho-ophiuchi/display-1600.jpg",
-        "srcset": "works/rho-ophiuchi/display-400.jpg 400w, works/rho-ophiuchi/display-800.jpg 800w, works/rho-ophiuchi/display-1200.jpg 1200w, works/rho-ophiuchi/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/rho-ophiuchi/display-400.jpg",
-            "webp": "works/rho-ophiuchi/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/rho-ophiuchi/display-800.jpg",
-            "webp": "works/rho-ophiuchi/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/rho-ophiuchi/display-1200.jpg",
-            "webp": "works/rho-ophiuchi/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/rho-ophiuchi/display-1600.jpg",
-            "webp": "works/rho-ophiuchi/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/rho-ophiuchi/display-400.webp 400w, works/rho-ophiuchi/display-800.webp 800w, works/rho-ophiuchi/display-1200.webp 1200w, works/rho-ophiuchi/display-1600.webp 1600w",
+        "largest": "works/rho-ophiuchi/display-1600.webp",
         "buttonCrop": "works/rho-ophiuchi/button.jpg",
         "navSample": "works/rho-ophiuchi/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwb/xAAZEAEBAQEBAQAAAAAAAAAAAAAAAQIRITH/xAAWAQEBAQAAAAAAAAAAAAAAAAACAQT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A576vOZJ6zK2jWinrnQkJRr//2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwb/xAAYEAEBAQEBAAAAAAAAAAAAAAAAAQIhMf/EABYBAQEBAAAAAAAAAAAAAAAAAAIBBP/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDnvV5zJOsyto1op694EhKNf//Z"
       },
       "placeholder": true
     },
@@ -283,29 +220,8 @@
       ],
       "web": {
         "src": "works/milky-way-core/display-1600.jpg",
-        "srcset": "works/milky-way-core/display-400.jpg 400w, works/milky-way-core/display-800.jpg 800w, works/milky-way-core/display-1200.jpg 1200w, works/milky-way-core/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/milky-way-core/display-400.jpg",
-            "webp": "works/milky-way-core/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/milky-way-core/display-800.jpg",
-            "webp": "works/milky-way-core/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/milky-way-core/display-1200.jpg",
-            "webp": "works/milky-way-core/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/milky-way-core/display-1600.jpg",
-            "webp": "works/milky-way-core/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/milky-way-core/display-400.webp 400w, works/milky-way-core/display-800.webp 800w, works/milky-way-core/display-1200.webp 1200w, works/milky-way-core/display-1600.webp 1600w",
+        "largest": "works/milky-way-core/display-1600.webp",
         "buttonCrop": "works/milky-way-core/button.jpg",
         "navSample": "works/milky-way-core/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAFxABAQEBAAAAAAAAAAAAAAAAAAEREv/EABUBAQEAAAAAAAAAAAAAAAAAAAED/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AzmnUBZVNoAL/2Q=="
@@ -359,29 +275,8 @@
       ],
       "web": {
         "src": "works/pleiades/display-1600.jpg",
-        "srcset": "works/pleiades/display-400.jpg 400w, works/pleiades/display-800.jpg 800w, works/pleiades/display-1200.jpg 1200w, works/pleiades/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/pleiades/display-400.jpg",
-            "webp": "works/pleiades/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/pleiades/display-800.jpg",
-            "webp": "works/pleiades/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/pleiades/display-1200.jpg",
-            "webp": "works/pleiades/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/pleiades/display-1600.jpg",
-            "webp": "works/pleiades/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/pleiades/display-400.webp 400w, works/pleiades/display-800.webp 800w, works/pleiades/display-1200.webp 1200w, works/pleiades/display-1600.webp 1600w",
+        "largest": "works/pleiades/display-1600.webp",
         "buttonCrop": "works/pleiades/button.jpg",
         "navSample": "works/pleiades/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAgADBv/EABkQAQEAAwEAAAAAAAAAAAAAAAABAhEhEv/EABYBAQEBAAAAAAAAAAAAAAAAAAIAA//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDnNlPMnWdG2txhZXvEG0ij/9k="
@@ -435,32 +330,11 @@
       ],
       "web": {
         "src": "works/lunar-terminator/display-1600.jpg",
-        "srcset": "works/lunar-terminator/display-400.jpg 400w, works/lunar-terminator/display-800.jpg 800w, works/lunar-terminator/display-1200.jpg 1200w, works/lunar-terminator/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/lunar-terminator/display-400.jpg",
-            "webp": "works/lunar-terminator/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/lunar-terminator/display-800.jpg",
-            "webp": "works/lunar-terminator/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/lunar-terminator/display-1200.jpg",
-            "webp": "works/lunar-terminator/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/lunar-terminator/display-1600.jpg",
-            "webp": "works/lunar-terminator/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/lunar-terminator/display-400.webp 400w, works/lunar-terminator/display-800.webp 800w, works/lunar-terminator/display-1200.webp 1200w, works/lunar-terminator/display-1600.webp 1600w",
+        "largest": "works/lunar-terminator/display-1600.webp",
         "buttonCrop": "works/lunar-terminator/button.jpg",
         "navSample": "works/lunar-terminator/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAbEAEBAAMAAwAAAAAAAAAAAAAAAQIDERIhMf/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgT/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAMAwEAAhEDEQA/AOL9a6tXlO1jMuLTdZPTOqozxkysGdytvQyqVaAGoACX/9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAaEAEBAAMBAQAAAAAAAAAAAAABAAIDERIh/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAECBP/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAwDAQACEQMRAD8A4trq1ejrYmXKxuQ+WdVRniGSSzcleyZVLVZIGokkJf/Z"
       },
       "placeholder": true
     },
@@ -511,29 +385,8 @@
       ],
       "web": {
         "src": "works/heart-nebula/display-1600.jpg",
-        "srcset": "works/heart-nebula/display-400.jpg 400w, works/heart-nebula/display-800.jpg 800w, works/heart-nebula/display-1200.jpg 1200w, works/heart-nebula/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/heart-nebula/display-400.jpg",
-            "webp": "works/heart-nebula/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/heart-nebula/display-800.jpg",
-            "webp": "works/heart-nebula/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/heart-nebula/display-1200.jpg",
-            "webp": "works/heart-nebula/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/heart-nebula/display-1600.jpg",
-            "webp": "works/heart-nebula/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/heart-nebula/display-400.webp 400w, works/heart-nebula/display-800.webp 800w, works/heart-nebula/display-1200.webp 1200w, works/heart-nebula/display-1600.webp 1600w",
+        "largest": "works/heart-nebula/display-1600.webp",
         "buttonCrop": "works/heart-nebula/button.jpg",
         "navSample": "works/heart-nebula/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBv/EABcQAQEBAQAAAAAAAAAAAAAAAAABITH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A55ckk1AI9L0YJmv/2Q=="
@@ -587,29 +440,8 @@
       ],
       "web": {
         "src": "works/comet-passage/display-1600.jpg",
-        "srcset": "works/comet-passage/display-400.jpg 400w, works/comet-passage/display-800.jpg 800w, works/comet-passage/display-1200.jpg 1200w, works/comet-passage/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/comet-passage/display-400.jpg",
-            "webp": "works/comet-passage/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/comet-passage/display-800.jpg",
-            "webp": "works/comet-passage/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/comet-passage/display-1200.jpg",
-            "webp": "works/comet-passage/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/comet-passage/display-1600.jpg",
-            "webp": "works/comet-passage/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/comet-passage/display-400.webp 400w, works/comet-passage/display-800.webp 800w, works/comet-passage/display-1200.webp 1200w, works/comet-passage/display-1600.webp 1600w",
+        "largest": "works/comet-passage/display-1600.webp",
         "buttonCrop": "works/comet-passage/button.jpg",
         "navSample": "works/comet-passage/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABkQAAIDAQAAAAAAAAAAAAAAAAABAhESIf/EABYBAQEBAAAAAAAAAAAAAAAAAAIBBP/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDDux45S6RbFbYozw0mtcAnYFhR/9k="
@@ -658,32 +490,11 @@
       ],
       "web": {
         "src": "works/harbor-at-dusk/display-1600.jpg",
-        "srcset": "works/harbor-at-dusk/display-400.jpg 400w, works/harbor-at-dusk/display-800.jpg 800w, works/harbor-at-dusk/display-1200.jpg 1200w, works/harbor-at-dusk/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/harbor-at-dusk/display-400.jpg",
-            "webp": "works/harbor-at-dusk/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/harbor-at-dusk/display-800.jpg",
-            "webp": "works/harbor-at-dusk/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/harbor-at-dusk/display-1200.jpg",
-            "webp": "works/harbor-at-dusk/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/harbor-at-dusk/display-1600.jpg",
-            "webp": "works/harbor-at-dusk/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/harbor-at-dusk/display-400.webp 400w, works/harbor-at-dusk/display-800.webp 800w, works/harbor-at-dusk/display-1200.webp 1200w, works/harbor-at-dusk/display-1600.webp 1600w",
+        "largest": "works/harbor-at-dusk/display-1600.webp",
         "buttonCrop": "works/harbor-at-dusk/button.jpg",
         "navSample": "works/harbor-at-dusk/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAYEAEAAwEAAAAAAAAAAAAAAAAAAQIRIf/EABYBAQEBAAAAAAAAAAAAAAAAAAMAAv/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDDjp6xWI6qGgJU2zeAoTNf/9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAZEAEAAwEBAAAAAAAAAAAAAAAAAQIhETH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8Aw409YrEaqHQEqbe4ChM1/9k="
       },
       "placeholder": true
     },
@@ -720,7 +531,7 @@
           "role": "display",
           "colorSpace": "srgb",
           "profile": null,
-          "path": "works/old-town-stairs/display-1200.jpg",
+          "path": "works/old-town-stairs/display-1600.jpg",
           "dimensions": {
             "width": 1260,
             "height": 1800
@@ -728,28 +539,12 @@
         }
       ],
       "web": {
-        "src": "works/old-town-stairs/display-1200.jpg",
-        "srcset": "works/old-town-stairs/display-400.jpg 400w, works/old-town-stairs/display-800.jpg 800w, works/old-town-stairs/display-1200.jpg 1200w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/old-town-stairs/display-400.jpg",
-            "webp": "works/old-town-stairs/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/old-town-stairs/display-800.jpg",
-            "webp": "works/old-town-stairs/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/old-town-stairs/display-1200.jpg",
-            "webp": "works/old-town-stairs/display-1200.webp"
-          }
-        ],
+        "src": "works/old-town-stairs/display-1600.jpg",
+        "srcsetWebp": "works/old-town-stairs/display-400.webp 280w, works/old-town-stairs/display-800.webp 560w, works/old-town-stairs/display-1200.webp 840w, works/old-town-stairs/display-1600.webp 1120w",
+        "largest": "works/old-town-stairs/display-1600.webp",
         "buttonCrop": "works/old-town-stairs/button.jpg",
         "navSample": "works/old-town-stairs/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAZEAEBAQEBAQAAAAAAAAAAAAABAAIRAyH/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAIE/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A4jVnzdHyQDa49DBc7bDWUeRPe+6WJBdpWbS0BEooP//Z"
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAZEAEBAQEBAQAAAAAAAAAAAAABAAIRAzH/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAIE/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A4jVnzdfJANrj0MFztsNZR5E977pYkF2lZtLQESig/9k="
       },
       "placeholder": true
     },
@@ -795,32 +590,11 @@
       ],
       "web": {
         "src": "works/market-morning/display-1600.jpg",
-        "srcset": "works/market-morning/display-400.jpg 400w, works/market-morning/display-800.jpg 800w, works/market-morning/display-1200.jpg 1200w, works/market-morning/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/market-morning/display-400.jpg",
-            "webp": "works/market-morning/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/market-morning/display-800.jpg",
-            "webp": "works/market-morning/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/market-morning/display-1200.jpg",
-            "webp": "works/market-morning/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/market-morning/display-1600.jpg",
-            "webp": "works/market-morning/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/market-morning/display-400.webp 400w, works/market-morning/display-800.webp 800w, works/market-morning/display-1200.webp 1200w, works/market-morning/display-1600.webp 1600w",
+        "largest": "works/market-morning/display-1600.webp",
         "buttonCrop": "works/market-morning/button.jpg",
         "navSample": "works/market-morning/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABgQAQEBAQEAAAAAAAAAAAAAAAABAhEh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAE/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMbps3MnqVLazxU2rO+BMEV//9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABkQAAMBAQEAAAAAAAAAAAAAAAABEQIhEv/EABYBAQEBAAAAAAAAAAAAAAAAAAEABP/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDGo2fM6SbFbZniptNXgE6Aiv/Z"
       },
       "placeholder": true
     },
@@ -866,32 +640,11 @@
       ],
       "web": {
         "src": "works/coastal-road/display-1600.jpg",
-        "srcset": "works/coastal-road/display-400.jpg 400w, works/coastal-road/display-800.jpg 800w, works/coastal-road/display-1200.jpg 1200w, works/coastal-road/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/coastal-road/display-400.jpg",
-            "webp": "works/coastal-road/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/coastal-road/display-800.jpg",
-            "webp": "works/coastal-road/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/coastal-road/display-1200.jpg",
-            "webp": "works/coastal-road/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/coastal-road/display-1600.jpg",
-            "webp": "works/coastal-road/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/coastal-road/display-400.webp 400w, works/coastal-road/display-800.webp 800w, works/coastal-road/display-1200.webp 1200w, works/coastal-road/display-1600.webp 1600w",
+        "largest": "works/coastal-road/display-1600.webp",
         "buttonCrop": "works/coastal-road/button.jpg",
         "navSample": "works/coastal-road/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBv/EABgQAQEBAQEAAAAAAAAAAAAAAAABAhIh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8Azt2juQFk4pd+gEx//9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIG/8QAGBABAQEBAQAAAAAAAAAAAAAAAAECEiH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAQL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/AM9dp7kAw5EXfoCtY//Z"
       },
       "placeholder": true
     },
@@ -937,32 +690,11 @@
       ],
       "web": {
         "src": "works/rooftop-lanterns/display-1600.jpg",
-        "srcset": "works/rooftop-lanterns/display-400.jpg 400w, works/rooftop-lanterns/display-800.jpg 800w, works/rooftop-lanterns/display-1200.jpg 1200w, works/rooftop-lanterns/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/rooftop-lanterns/display-400.jpg",
-            "webp": "works/rooftop-lanterns/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/rooftop-lanterns/display-800.jpg",
-            "webp": "works/rooftop-lanterns/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/rooftop-lanterns/display-1200.jpg",
-            "webp": "works/rooftop-lanterns/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/rooftop-lanterns/display-1600.jpg",
-            "webp": "works/rooftop-lanterns/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/rooftop-lanterns/display-400.webp 400w, works/rooftop-lanterns/display-800.webp 800w, works/rooftop-lanterns/display-1200.webp 1200w, works/rooftop-lanterns/display-1600.webp 1600w",
+        "largest": "works/rooftop-lanterns/display-1600.webp",
         "buttonCrop": "works/rooftop-lanterns/button.jpg",
         "navSample": "works/rooftop-lanterns/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAYEAADAQEAAAAAAAAAAAAAAAAAAhEBIf/EABYBAQEBAAAAAAAAAAAAAAAAAAMAAf/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDBzKMVVnRQXQS1LS8AqBMr/9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAZEAEAAwEBAAAAAAAAAAAAAAAAAQIRITH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AwYjTK1jOlDZCWpt7wKhMr//Z"
       },
       "placeholder": true
     },
@@ -999,7 +731,7 @@
           "role": "display",
           "colorSpace": "srgb",
           "profile": null,
-          "path": "works/tram-window/display-1200.jpg",
+          "path": "works/tram-window/display-1600.jpg",
           "dimensions": {
             "width": 1350,
             "height": 1800
@@ -1007,28 +739,12 @@
         }
       ],
       "web": {
-        "src": "works/tram-window/display-1200.jpg",
-        "srcset": "works/tram-window/display-400.jpg 400w, works/tram-window/display-800.jpg 800w, works/tram-window/display-1200.jpg 1200w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/tram-window/display-400.jpg",
-            "webp": "works/tram-window/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/tram-window/display-800.jpg",
-            "webp": "works/tram-window/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/tram-window/display-1200.jpg",
-            "webp": "works/tram-window/display-1200.webp"
-          }
-        ],
+        "src": "works/tram-window/display-1600.jpg",
+        "srcsetWebp": "works/tram-window/display-400.webp 300w, works/tram-window/display-800.webp 600w, works/tram-window/display-1200.webp 900w, works/tram-window/display-1600.webp 1200w",
+        "largest": "works/tram-window/display-1600.webp",
         "buttonCrop": "works/tram-window/button.jpg",
         "navSample": "works/tram-window/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAECAwb/xAAaEAADAQADAAAAAAAAAAAAAAAAAQIRAyFB/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAMBAv/EABURAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIRAxEAPwDzzZZh0RZ6bXIpXReJuVLHgJV7WgOhsy2VmGCGggDX/9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwb/xAAaEAADAQADAAAAAAAAAAAAAAAAAQIRAyFB/8QAFwEBAQEBAAAAAAAAAAAAAAAAAAMBAv/EABURAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIRAxEAPwDnmxzDoSz0tcimei8TZUseATV7WgHRtktjZDBBoCANf//Z"
       },
       "placeholder": true
     },
@@ -1074,29 +790,8 @@
       ],
       "web": {
         "src": "works/desert-highway/display-1600.jpg",
-        "srcset": "works/desert-highway/display-400.jpg 400w, works/desert-highway/display-800.jpg 800w, works/desert-highway/display-1200.jpg 1200w, works/desert-highway/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/desert-highway/display-400.jpg",
-            "webp": "works/desert-highway/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/desert-highway/display-800.jpg",
-            "webp": "works/desert-highway/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/desert-highway/display-1200.jpg",
-            "webp": "works/desert-highway/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/desert-highway/display-1600.jpg",
-            "webp": "works/desert-highway/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/desert-highway/display-400.webp 400w, works/desert-highway/display-800.webp 800w, works/desert-highway/display-1200.webp 1200w, works/desert-highway/display-1600.webp 1600w",
+        "largest": "works/desert-highway/display-1600.webp",
         "buttonCrop": "works/desert-highway/button.jpg",
         "navSample": "works/desert-highway/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAXEAEBAQEAAAAAAAAAAAAAAAAAASEC/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAD/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMM0vMmqwwOpt0FCGv/Z"
@@ -1145,32 +840,11 @@
       ],
       "web": {
         "src": "works/granite-basin/display-1600.jpg",
-        "srcset": "works/granite-basin/display-400.jpg 400w, works/granite-basin/display-800.jpg 800w, works/granite-basin/display-1200.jpg 1200w, works/granite-basin/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/granite-basin/display-400.jpg",
-            "webp": "works/granite-basin/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/granite-basin/display-800.jpg",
-            "webp": "works/granite-basin/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/granite-basin/display-1200.jpg",
-            "webp": "works/granite-basin/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/granite-basin/display-1600.jpg",
-            "webp": "works/granite-basin/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/granite-basin/display-400.webp 400w, works/granite-basin/display-800.webp 800w, works/granite-basin/display-1200.webp 1200w, works/granite-basin/display-1600.webp 1600w",
+        "largest": "works/granite-basin/display-1600.webp",
         "buttonCrop": "works/granite-basin/button.jpg",
         "navSample": "works/granite-basin/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQb/xAAYEAEBAQEBAAAAAAAAAAAAAAABAAIRIf/EABUBAQEAAAAAAAAAAAAAAAAAAAED/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AOf7aOQ9pLItZOG1o7FPsSY//9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQb/xAAZEAEBAAMBAAAAAAAAAAAAAAABAAIRIRL/xAAVAQEBAAAAAAAAAAAAAAAAAAABA//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDn92nkO0lkVrJw+WRvkUtxJj//2Q=="
       },
       "placeholder": true
     },
@@ -1216,32 +890,11 @@
       ],
       "web": {
         "src": "works/valley-fog/display-1600.jpg",
-        "srcset": "works/valley-fog/display-400.jpg 400w, works/valley-fog/display-800.jpg 800w, works/valley-fog/display-1200.jpg 1200w, works/valley-fog/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/valley-fog/display-400.jpg",
-            "webp": "works/valley-fog/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/valley-fog/display-800.jpg",
-            "webp": "works/valley-fog/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/valley-fog/display-1200.jpg",
-            "webp": "works/valley-fog/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/valley-fog/display-1600.jpg",
-            "webp": "works/valley-fog/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/valley-fog/display-400.webp 400w, works/valley-fog/display-800.webp 800w, works/valley-fog/display-1200.webp 1200w, works/valley-fog/display-1600.webp 1600w",
+        "largest": "works/valley-fog/display-1600.webp",
         "buttonCrop": "works/valley-fog/button.jpg",
         "navSample": "works/valley-fog/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAHABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAEDBv/EABkQAQACAwAAAAAAAAAAAAAAAAABAhETIf/EABYBAQEBAAAAAAAAAAAAAAAAAAMAAf/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8Az82RswBhSK5v0BNx/9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAHABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAEDBv/EABkQAQACAwAAAAAAAAAAAAAAAAABAhESIf/EABUBAQEAAAAAAAAAAAAAAAAAAAED/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AM/Nkb4BVKK5v0AmP//Z"
       },
       "placeholder": true
     },
@@ -1287,32 +940,11 @@
       ],
       "web": {
         "src": "works/autumn-larches/display-1600.jpg",
-        "srcset": "works/autumn-larches/display-400.jpg 400w, works/autumn-larches/display-800.jpg 800w, works/autumn-larches/display-1200.jpg 1200w, works/autumn-larches/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/autumn-larches/display-400.jpg",
-            "webp": "works/autumn-larches/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/autumn-larches/display-800.jpg",
-            "webp": "works/autumn-larches/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/autumn-larches/display-1200.jpg",
-            "webp": "works/autumn-larches/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/autumn-larches/display-1600.jpg",
-            "webp": "works/autumn-larches/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/autumn-larches/display-400.webp 400w, works/autumn-larches/display-800.webp 800w, works/autumn-larches/display-1200.webp 1200w, works/autumn-larches/display-1600.webp 1600w",
+        "largest": "works/autumn-larches/display-1600.webp",
         "buttonCrop": "works/autumn-larches/button.jpg",
         "navSample": "works/autumn-larches/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIRIRIx/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAD/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMX0eCjWlNkNswKmk11gCWBDX//Z"
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAZEAADAQEBAAAAAAAAAAAAAAAAARECEjH/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8AxfR8LMdKaQ2zAqbTXTgCUCGv/9k="
       },
       "placeholder": true
     },
@@ -1349,7 +981,7 @@
           "role": "display",
           "colorSpace": "srgb",
           "profile": null,
-          "path": "works/sea-stack/display-1200.jpg",
+          "path": "works/sea-stack/display-1600.jpg",
           "dimensions": {
             "width": 1260,
             "height": 1800
@@ -1357,28 +989,12 @@
         }
       ],
       "web": {
-        "src": "works/sea-stack/display-1200.jpg",
-        "srcset": "works/sea-stack/display-400.jpg 400w, works/sea-stack/display-800.jpg 800w, works/sea-stack/display-1200.jpg 1200w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/sea-stack/display-400.jpg",
-            "webp": "works/sea-stack/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/sea-stack/display-800.jpg",
-            "webp": "works/sea-stack/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/sea-stack/display-1200.jpg",
-            "webp": "works/sea-stack/display-1200.webp"
-          }
-        ],
+        "src": "works/sea-stack/display-1600.jpg",
+        "srcsetWebp": "works/sea-stack/display-400.webp 280w, works/sea-stack/display-800.webp 560w, works/sea-stack/display-1200.webp 840w, works/sea-stack/display-1600.webp 1120w",
+        "largest": "works/sea-stack/display-1600.webp",
         "buttonCrop": "works/sea-stack/button.jpg",
         "navSample": "works/sea-stack/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAECAwb/xAAYEAEBAQEBAAAAAAAAAAAAAAAAAQIRIf/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8A87VmLpJ63NzEaEOVnLwNa7ehKOs2lSgROiAN/9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAECAwb/xAAYEAEBAQEBAAAAAAAAAAAAAAAAAQIRIf/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8A87SYuietzcxGhDlZy8E1rt6Epes2lSgROiAN/9k="
       },
       "placeholder": true
     },
@@ -1424,29 +1040,8 @@
       ],
       "web": {
         "src": "works/alpine-tarn/display-1600.jpg",
-        "srcset": "works/alpine-tarn/display-400.jpg 400w, works/alpine-tarn/display-800.jpg 800w, works/alpine-tarn/display-1200.jpg 1200w, works/alpine-tarn/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/alpine-tarn/display-400.jpg",
-            "webp": "works/alpine-tarn/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/alpine-tarn/display-800.jpg",
-            "webp": "works/alpine-tarn/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/alpine-tarn/display-1200.jpg",
-            "webp": "works/alpine-tarn/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/alpine-tarn/display-1600.jpg",
-            "webp": "works/alpine-tarn/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/alpine-tarn/display-400.webp 400w, works/alpine-tarn/display-800.webp 800w, works/alpine-tarn/display-1200.webp 1200w, works/alpine-tarn/display-1600.webp 1600w",
+        "largest": "works/alpine-tarn/display-1600.webp",
         "buttonCrop": "works/alpine-tarn/button.jpg",
         "navSample": "works/alpine-tarn/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBv/EABkQAQEAAwEAAAAAAAAAAAAAAAEAAhEhEv/EABYBAQEBAAAAAAAAAAAAAAAAAAIAA//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDPbmPIdorKrbhDZJvkU9xRR//Z"
@@ -1495,32 +1090,11 @@
       ],
       "web": {
         "src": "works/dune-field/display-1600.jpg",
-        "srcset": "works/dune-field/display-400.jpg 400w, works/dune-field/display-800.jpg 800w, works/dune-field/display-1200.jpg 1200w, works/dune-field/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/dune-field/display-400.jpg",
-            "webp": "works/dune-field/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/dune-field/display-800.jpg",
-            "webp": "works/dune-field/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/dune-field/display-1200.jpg",
-            "webp": "works/dune-field/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/dune-field/display-1600.jpg",
-            "webp": "works/dune-field/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/dune-field/display-400.webp 400w, works/dune-field/display-800.webp 800w, works/dune-field/display-1200.webp 1200w, works/dune-field/display-1600.webp 1600w",
+        "largest": "works/dune-field/display-1600.webp",
         "buttonCrop": "works/dune-field/button.jpg",
         "navSample": "works/dune-field/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAZEAEBAAMBAAAAAAAAAAAAAAAAAQIREiH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMM2PMnqsMF1Ns2CgFX/2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAYEAEBAQEBAAAAAAAAAAAAAAAAASECEv/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8Awzc+ZNVhgupt0FAKv//Z"
       },
       "placeholder": true
     },
@@ -1566,32 +1140,11 @@
       ],
       "web": {
         "src": "works/storm-front/display-1600.jpg",
-        "srcset": "works/storm-front/display-400.jpg 400w, works/storm-front/display-800.jpg 800w, works/storm-front/display-1200.jpg 1200w, works/storm-front/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/storm-front/display-400.jpg",
-            "webp": "works/storm-front/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/storm-front/display-800.jpg",
-            "webp": "works/storm-front/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/storm-front/display-1200.jpg",
-            "webp": "works/storm-front/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/storm-front/display-1600.jpg",
-            "webp": "works/storm-front/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/storm-front/display-400.webp 400w, works/storm-front/display-800.webp 800w, works/storm-front/display-1200.webp 1200w, works/storm-front/display-1600.webp 1600w",
+        "largest": "works/storm-front/display-1600.webp",
         "buttonCrop": "works/storm-front/button.jpg",
         "navSample": "works/storm-front/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAJABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAQAG/8QAFhABAQEAAAAAAAAAAAAAAAAAAAER/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwDNHZAG+rkVqCBx/9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAJABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAQAG/8QAFhABAQEAAAAAAAAAAAAAAAAAAAER/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwDNadkAb6uRWoIHH//Z"
       },
       "placeholder": true
     },
@@ -1628,7 +1181,7 @@
           "role": "display",
           "colorSpace": "srgb",
           "profile": null,
-          "path": "works/heron-at-rest/display-1200.jpg",
+          "path": "works/heron-at-rest/display-1600.jpg",
           "dimensions": {
             "width": 1350,
             "height": 1800
@@ -1636,28 +1189,12 @@
         }
       ],
       "web": {
-        "src": "works/heron-at-rest/display-1200.jpg",
-        "srcset": "works/heron-at-rest/display-400.jpg 400w, works/heron-at-rest/display-800.jpg 800w, works/heron-at-rest/display-1200.jpg 1200w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/heron-at-rest/display-400.jpg",
-            "webp": "works/heron-at-rest/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/heron-at-rest/display-800.jpg",
-            "webp": "works/heron-at-rest/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/heron-at-rest/display-1200.jpg",
-            "webp": "works/heron-at-rest/display-1200.webp"
-          }
-        ],
+        "src": "works/heron-at-rest/display-1600.jpg",
+        "srcsetWebp": "works/heron-at-rest/display-400.webp 300w, works/heron-at-rest/display-800.webp 600w, works/heron-at-rest/display-1200.webp 900w, works/heron-at-rest/display-1600.webp 1200w",
+        "largest": "works/heron-at-rest/display-1600.webp",
         "buttonCrop": "works/heron-at-rest/button.jpg",
         "navSample": "works/heron-at-rest/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAZEAADAQEBAAAAAAAAAAAAAAAAAQIRA0H/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQIE/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AOGy45u0Ss9LjqoQczKpx4ArvabAqhslsbJYiloCA0P/2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAZEAEBAQEBAQAAAAAAAAAAAAABAAIRA0H/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQIE/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhEDEQA/AOGtWfN2SOfa8+pgjmZayjyJa33SxVQtKzaWRS7EotD/2Q=="
       },
       "placeholder": true
     },
@@ -1703,32 +1240,11 @@
       ],
       "web": {
         "src": "works/fox-in-snow/display-1600.jpg",
-        "srcset": "works/fox-in-snow/display-400.jpg 400w, works/fox-in-snow/display-800.jpg 800w, works/fox-in-snow/display-1200.jpg 1200w, works/fox-in-snow/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/fox-in-snow/display-400.jpg",
-            "webp": "works/fox-in-snow/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/fox-in-snow/display-800.jpg",
-            "webp": "works/fox-in-snow/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/fox-in-snow/display-1200.jpg",
-            "webp": "works/fox-in-snow/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/fox-in-snow/display-1600.jpg",
-            "webp": "works/fox-in-snow/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/fox-in-snow/display-400.webp 400w, works/fox-in-snow/display-800.webp 800w, works/fox-in-snow/display-1200.webp 1200w, works/fox-in-snow/display-1600.webp 1600w",
+        "largest": "works/fox-in-snow/display-1600.webp",
         "buttonCrop": "works/fox-in-snow/button.jpg",
         "navSample": "works/fox-in-snow/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEDBf/EABkQAQEBAAMAAAAAAAAAAAAAAAABAhEhMf/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDBUzMydplyEtO+ggjNf//Z"
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQX/xAAYEAEBAQEBAAAAAAAAAAAAAAAAARECIf/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDgqczmT1NmhLTXNBQjNf/Z"
       },
       "placeholder": true
     },
@@ -1774,32 +1290,11 @@
       ],
       "web": {
         "src": "works/dragonfly/display-1600.jpg",
-        "srcset": "works/dragonfly/display-400.jpg 400w, works/dragonfly/display-800.jpg 800w, works/dragonfly/display-1200.jpg 1200w, works/dragonfly/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/dragonfly/display-400.jpg",
-            "webp": "works/dragonfly/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/dragonfly/display-800.jpg",
-            "webp": "works/dragonfly/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/dragonfly/display-1200.jpg",
-            "webp": "works/dragonfly/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/dragonfly/display-1600.jpg",
-            "webp": "works/dragonfly/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/dragonfly/display-400.webp 400w, works/dragonfly/display-800.webp 800w, works/dragonfly/display-1200.webp 1200w, works/dragonfly/display-1600.webp 1600w",
+        "largest": "works/dragonfly/display-1600.webp",
         "buttonCrop": "works/dragonfly/button.jpg",
         "navSample": "works/dragonfly/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABkQAAMBAQEAAAAAAAAAAAAAAAABEQISIv/EABUBAQEAAAAAAAAAAAAAAAAAAAED/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMS0phZnog2K9MjEj6a6cAlQGB//2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABkQAAMBAQEAAAAAAAAAAAAAAAABAhESIf/EABUBAQEAAAAAAAAAAAAAAAAAAAED/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AMTdKQpS9INiumRiR6a6eAS0Bgf/2Q=="
       },
       "placeholder": true
     },
@@ -1836,7 +1331,7 @@
           "role": "display",
           "colorSpace": "srgb",
           "profile": null,
-          "path": "works/old-growth/display-1200.jpg",
+          "path": "works/old-growth/display-1600.jpg",
           "dimensions": {
             "width": 1260,
             "height": 1800
@@ -1844,28 +1339,12 @@
         }
       ],
       "web": {
-        "src": "works/old-growth/display-1200.jpg",
-        "srcset": "works/old-growth/display-400.jpg 400w, works/old-growth/display-800.jpg 800w, works/old-growth/display-1200.jpg 1200w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/old-growth/display-400.jpg",
-            "webp": "works/old-growth/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/old-growth/display-800.jpg",
-            "webp": "works/old-growth/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/old-growth/display-1200.jpg",
-            "webp": "works/old-growth/display-1200.webp"
-          }
-        ],
+        "src": "works/old-growth/display-1600.jpg",
+        "srcsetWebp": "works/old-growth/display-400.webp 280w, works/old-growth/display-800.webp 560w, works/old-growth/display-1200.webp 840w, works/old-growth/display-1600.webp 1120w",
+        "largest": "works/old-growth/display-1600.webp",
         "buttonCrop": "works/old-growth/button.jpg",
         "navSample": "works/old-growth/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAEDAgX/xAAZEAADAQEBAAAAAAAAAAAAAAAAAQIRIQP/xAAYAQACAwAAAAAAAAAAAAAAAAAAAQIDBP/EABURAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIRAxEAPwDw2WfN0uEXTWbUIqZ2Dlp4BV7WgkDSNhnLHDAQDD//2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAEDAgX/xAAZEAADAQEBAAAAAAAAAAAAAAAAAQIRIQP/xAAYAQACAwAAAAAAAAAAAAAAAAAAAQIDBP/EABURAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIRAxEAPwDw2WfN0uEXTWbUSVM9YNNPAKva0EgaRsHLHDAQDD//2Q=="
       },
       "placeholder": true
     },
@@ -1911,32 +1390,11 @@
       ],
       "web": {
         "src": "works/tide-pool/display-1600.jpg",
-        "srcset": "works/tide-pool/display-400.jpg 400w, works/tide-pool/display-800.jpg 800w, works/tide-pool/display-1200.jpg 1200w, works/tide-pool/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/tide-pool/display-400.jpg",
-            "webp": "works/tide-pool/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/tide-pool/display-800.jpg",
-            "webp": "works/tide-pool/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/tide-pool/display-1200.jpg",
-            "webp": "works/tide-pool/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/tide-pool/display-1600.jpg",
-            "webp": "works/tide-pool/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/tide-pool/display-400.webp 400w, works/tide-pool/display-800.webp 800w, works/tide-pool/display-1200.webp 1200w, works/tide-pool/display-1600.webp 1600w",
+        "largest": "works/tide-pool/display-1600.webp",
         "buttonCrop": "works/tide-pool/button.jpg",
         "navSample": "works/tide-pool/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQX/xAAYEAEBAQEBAAAAAAAAAAAAAAABAAIRIf/EABYBAQEBAAAAAAAAAAAAAAAAAAECA//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDhrblyHtJZFrYQ+tHfIpdiTH//2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQX/xAAZEAACAwEAAAAAAAAAAAAAAAAAAQIRIRL/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A4bZsea0k2K2y2ENKSvAJWAmP/9k="
       },
       "placeholder": true
     },
@@ -1982,29 +1440,8 @@
       ],
       "web": {
         "src": "works/wildflower-meadow/display-1600.jpg",
-        "srcset": "works/wildflower-meadow/display-400.jpg 400w, works/wildflower-meadow/display-800.jpg 800w, works/wildflower-meadow/display-1200.jpg 1200w, works/wildflower-meadow/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/wildflower-meadow/display-400.jpg",
-            "webp": "works/wildflower-meadow/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/wildflower-meadow/display-800.jpg",
-            "webp": "works/wildflower-meadow/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/wildflower-meadow/display-1200.jpg",
-            "webp": "works/wildflower-meadow/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/wildflower-meadow/display-1600.jpg",
-            "webp": "works/wildflower-meadow/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/wildflower-meadow/display-400.webp 400w, works/wildflower-meadow/display-800.webp 800w, works/wildflower-meadow/display-1200.webp 1200w, works/wildflower-meadow/display-1600.webp 1600w",
+        "largest": "works/wildflower-meadow/display-1600.webp",
         "buttonCrop": "works/wildflower-meadow/button.jpg",
         "navSample": "works/wildflower-meadow/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwb/xAAYEAEBAQEBAAAAAAAAAAAAAAAAASECEf/EABYBAQEBAAAAAAAAAAAAAAAAAAECBP/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDPeml5k1XS1daE26CAUP/Z"
@@ -2053,29 +1490,8 @@
       ],
       "web": {
         "src": "works/diner-counter/display-1600.jpg",
-        "srcset": "works/diner-counter/display-400.jpg 400w, works/diner-counter/display-800.jpg 800w, works/diner-counter/display-1200.jpg 1200w, works/diner-counter/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/diner-counter/display-400.jpg",
-            "webp": "works/diner-counter/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/diner-counter/display-800.jpg",
-            "webp": "works/diner-counter/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/diner-counter/display-1200.jpg",
-            "webp": "works/diner-counter/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/diner-counter/display-1600.jpg",
-            "webp": "works/diner-counter/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/diner-counter/display-400.webp 400w, works/diner-counter/display-800.webp 800w, works/diner-counter/display-1200.webp 1200w, works/diner-counter/display-1600.webp 1600w",
+        "largest": "works/diner-counter/display-1600.webp",
         "buttonCrop": "works/diner-counter/button.jpg",
         "navSample": "works/diner-counter/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAYEAEBAQEBAAAAAAAAAAAAAAAAAQIhMf/EABYBAQEBAAAAAAAAAAAAAAAAAAMAAf/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDChmZmTpQASpvoVCZX/9k="
@@ -2124,32 +1540,11 @@
       ],
       "web": {
         "src": "works/backyard-july/display-1600.jpg",
-        "srcset": "works/backyard-july/display-400.jpg 400w, works/backyard-july/display-800.jpg 800w, works/backyard-july/display-1200.jpg 1200w, works/backyard-july/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/backyard-july/display-400.jpg",
-            "webp": "works/backyard-july/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/backyard-july/display-800.jpg",
-            "webp": "works/backyard-july/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/backyard-july/display-1200.jpg",
-            "webp": "works/backyard-july/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/backyard-july/display-1600.jpg",
-            "webp": "works/backyard-july/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/backyard-july/display-400.webp 400w, works/backyard-july/display-800.webp 800w, works/backyard-july/display-1200.webp 1200w, works/backyard-july/display-1600.webp 1600w",
+        "largest": "works/backyard-july/display-1600.webp",
         "buttonCrop": "works/backyard-july/button.jpg",
         "navSample": "works/backyard-july/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDBAX/xAAYEAADAQEAAAAAAAAAAAAAAAAAARECEv/EABUBAQEAAAAAAAAAAAAAAAAAAAEE/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AOPaUwsx9GdsV6ZPBT7a6cAlQGCv/9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABgQAAMBAQAAAAAAAAAAAAAAAAABEQIS/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8Ax7SmFmPog2I9Mngp9tdOASoDBX//2Q=="
       },
       "placeholder": true
     },
@@ -2195,32 +1590,11 @@
       ],
       "web": {
         "src": "works/pier-in-winter/display-1600.jpg",
-        "srcset": "works/pier-in-winter/display-400.jpg 400w, works/pier-in-winter/display-800.jpg 800w, works/pier-in-winter/display-1200.jpg 1200w, works/pier-in-winter/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/pier-in-winter/display-400.jpg",
-            "webp": "works/pier-in-winter/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/pier-in-winter/display-800.jpg",
-            "webp": "works/pier-in-winter/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/pier-in-winter/display-1200.jpg",
-            "webp": "works/pier-in-winter/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/pier-in-winter/display-1600.jpg",
-            "webp": "works/pier-in-winter/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/pier-in-winter/display-400.webp 400w, works/pier-in-winter/display-800.webp 800w, works/pier-in-winter/display-1200.webp 1200w, works/pier-in-winter/display-1600.webp 1600w",
+        "largest": "works/pier-in-winter/display-1600.webp",
         "buttonCrop": "works/pier-in-winter/button.jpg",
         "navSample": "works/pier-in-winter/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQb/xAAYEAEBAQEBAAAAAAAAAAAAAAABAAIRIf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAA//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDnu2jkPaTKtuENpOxTiij/2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQb/xAAZEAACAwEAAAAAAAAAAAAAAAAAAQIRIRL/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A56zVzWkmxW2bhDSe4BOwIo//2Q=="
       },
       "placeholder": true
     },
@@ -2257,7 +1631,7 @@
           "role": "display",
           "colorSpace": "srgb",
           "profile": null,
-          "path": "works/portrait-window-light/display-1200.jpg",
+          "path": "works/portrait-window-light/display-1600.jpg",
           "dimensions": {
             "width": 1350,
             "height": 1800
@@ -2265,28 +1639,12 @@
         }
       ],
       "web": {
-        "src": "works/portrait-window-light/display-1200.jpg",
-        "srcset": "works/portrait-window-light/display-400.jpg 400w, works/portrait-window-light/display-800.jpg 800w, works/portrait-window-light/display-1200.jpg 1200w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/portrait-window-light/display-400.jpg",
-            "webp": "works/portrait-window-light/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/portrait-window-light/display-800.jpg",
-            "webp": "works/portrait-window-light/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/portrait-window-light/display-1200.jpg",
-            "webp": "works/portrait-window-light/display-1200.webp"
-          }
-        ],
+        "src": "works/portrait-window-light/display-1600.jpg",
+        "srcsetWebp": "works/portrait-window-light/display-400.webp 300w, works/portrait-window-light/display-800.webp 600w, works/portrait-window-light/display-1200.webp 900w, works/portrait-window-light/display-1600.webp 1200w",
+        "largest": "works/portrait-window-light/display-1600.webp",
         "buttonCrop": "works/portrait-window-light/button.jpg",
         "navSample": "works/portrait-window-light/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAZEAEBAQEBAQAAAAAAAAAAAAAAAgERAyL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8A4a8ee1iPnjSPTIxhWjGp5vBa6za6CKI6IEoAI//Z"
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAZEAEBAQEBAQAAAAAAAAAAAAAAAQIRAyL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8A4a8ed1C+eNMekzGFaMdZsvArWpddAiCBCUAgI//Z"
       },
       "placeholder": true
     },
@@ -2332,32 +1690,11 @@
       ],
       "web": {
         "src": "works/neon-rainy-night/display-1600.jpg",
-        "srcset": "works/neon-rainy-night/display-400.jpg 400w, works/neon-rainy-night/display-800.jpg 800w, works/neon-rainy-night/display-1200.jpg 1200w, works/neon-rainy-night/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/neon-rainy-night/display-400.jpg",
-            "webp": "works/neon-rainy-night/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/neon-rainy-night/display-800.jpg",
-            "webp": "works/neon-rainy-night/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/neon-rainy-night/display-1200.jpg",
-            "webp": "works/neon-rainy-night/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/neon-rainy-night/display-1600.jpg",
-            "webp": "works/neon-rainy-night/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/neon-rainy-night/display-400.webp 400w, works/neon-rainy-night/display-800.webp 800w, works/neon-rainy-night/display-1200.webp 1200w, works/neon-rainy-night/display-1600.webp 1600w",
+        "largest": "works/neon-rainy-night/display-1600.webp",
         "buttonCrop": "works/neon-rainy-night/button.jpg",
         "navSample": "works/neon-rainy-night/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwb/xAAZEAEBAQADAAAAAAAAAAAAAAAAAQIRITH/xAAVAQEBAAAAAAAAAAAAAAAAAAABBP/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDnvV5mZO2RWiqKds5CAKH/2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwb/xAAZEAEBAAMBAAAAAAAAAAAAAAAAAQIRITH/xAAVAQEBAAAAAAAAAAAAAAAAAAABBP/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDnvV4zHXWRW0VQds2EAUP/2Q=="
       },
       "placeholder": true
     },
@@ -2403,32 +1740,11 @@
       ],
       "web": {
         "src": "works/field-road/display-1600.jpg",
-        "srcset": "works/field-road/display-400.jpg 400w, works/field-road/display-800.jpg 800w, works/field-road/display-1200.jpg 1200w, works/field-road/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/field-road/display-400.jpg",
-            "webp": "works/field-road/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/field-road/display-800.jpg",
-            "webp": "works/field-road/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/field-road/display-1200.jpg",
-            "webp": "works/field-road/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/field-road/display-1600.jpg",
-            "webp": "works/field-road/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/field-road/display-400.webp 400w, works/field-road/display-800.webp 800w, works/field-road/display-1200.webp 1200w, works/field-road/display-1600.webp 1600w",
+        "largest": "works/field-road/display-1600.webp",
         "buttonCrop": "works/field-road/button.jpg",
         "navSample": "works/field-road/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAJABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAF/8QAGBABAQEBAQAAAAAAAAAAAAAAAAECEiH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8Aw7pdyBRooErr1AmxP//Z"
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAJABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAF/8QAGBABAQEBAQAAAAAAAAAAAAAAAAECEiH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8Aw7pdyDQooErr1AmxP//Z"
       },
       "placeholder": true
     },
@@ -2479,29 +1795,8 @@
       ],
       "web": {
         "src": "works/orion-nebula-2/display-1600.jpg",
-        "srcset": "works/orion-nebula-2/display-400.jpg 400w, works/orion-nebula-2/display-800.jpg 800w, works/orion-nebula-2/display-1200.jpg 1200w, works/orion-nebula-2/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/orion-nebula-2/display-400.jpg",
-            "webp": "works/orion-nebula-2/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/orion-nebula-2/display-800.jpg",
-            "webp": "works/orion-nebula-2/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/orion-nebula-2/display-1200.jpg",
-            "webp": "works/orion-nebula-2/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/orion-nebula-2/display-1600.jpg",
-            "webp": "works/orion-nebula-2/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/orion-nebula-2/display-400.webp 400w, works/orion-nebula-2/display-800.webp 800w, works/orion-nebula-2/display-1200.webp 1200w, works/orion-nebula-2/display-1600.webp 1600w",
+        "largest": "works/orion-nebula-2/display-1600.webp",
         "buttonCrop": "works/orion-nebula-2/button.jpg",
         "navSample": "works/orion-nebula-2/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBv/EABkQAQEAAwEAAAAAAAAAAAAAAAEAAhEhEv/EABYBAQEBAAAAAAAAAAAAAAAAAAIAA//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDPbmPIdorKrbhDZJvkU9xRR//Z"
@@ -2555,32 +1850,11 @@
       ],
       "web": {
         "src": "works/andromeda-2/display-1600.jpg",
-        "srcset": "works/andromeda-2/display-400.jpg 400w, works/andromeda-2/display-800.jpg 800w, works/andromeda-2/display-1200.jpg 1200w, works/andromeda-2/display-1600.jpg 1600w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/andromeda-2/display-400.jpg",
-            "webp": "works/andromeda-2/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/andromeda-2/display-800.jpg",
-            "webp": "works/andromeda-2/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/andromeda-2/display-1200.jpg",
-            "webp": "works/andromeda-2/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/andromeda-2/display-1600.jpg",
-            "webp": "works/andromeda-2/display-1600.webp"
-          }
-        ],
+        "srcsetWebp": "works/andromeda-2/display-400.webp 400w, works/andromeda-2/display-800.webp 800w, works/andromeda-2/display-1200.webp 1200w, works/andromeda-2/display-1600.webp 1600w",
+        "largest": "works/andromeda-2/display-1600.webp",
         "buttonCrop": "works/andromeda-2/button.jpg",
         "navSample": "works/andromeda-2/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAZEAEBAAMBAAAAAAAAAAAAAAAAAQIREiH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AOGvHmT1mTBdO2bCQCr/2Q=="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAYEAEBAQEBAAAAAAAAAAAAAAAAAQIRIf/EABcBAAMBAAAAAAAAAAAAAAAAAAABAgP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A4a8zMnrMusF09WdCQCr/2Q=="
       },
       "placeholder": true
     },
@@ -2621,7 +1895,7 @@
           "role": "display",
           "colorSpace": "srgb",
           "profile": null,
-          "path": "works/orion-constellation/display-2000.jpg",
+          "path": "works/orion-constellation/display-1600.jpg",
           "dimensions": {
             "width": 3345,
             "height": 5018
@@ -2629,38 +1903,12 @@
         }
       ],
       "web": {
-        "src": "works/orion-constellation/display-2000.jpg",
-        "srcset": "works/orion-constellation/display-400.jpg 400w, works/orion-constellation/display-800.jpg 800w, works/orion-constellation/display-1200.jpg 1200w, works/orion-constellation/display-1600.jpg 1600w, works/orion-constellation/display-2000.jpg 2000w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/orion-constellation/display-400.jpg",
-            "webp": "works/orion-constellation/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/orion-constellation/display-800.jpg",
-            "webp": "works/orion-constellation/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/orion-constellation/display-1200.jpg",
-            "webp": "works/orion-constellation/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/orion-constellation/display-1600.jpg",
-            "webp": "works/orion-constellation/display-1600.webp"
-          },
-          {
-            "w": 2000,
-            "jpg": "works/orion-constellation/display-2000.jpg",
-            "webp": "works/orion-constellation/display-2000.webp"
-          }
-        ],
+        "src": "works/orion-constellation/display-1600.jpg",
+        "srcsetWebp": "works/orion-constellation/display-400.webp 267w, works/orion-constellation/display-800.webp 533w, works/orion-constellation/display-1200.webp 800w, works/orion-constellation/display-1600.webp 1067w, works/orion-constellation/display-2560.webp 1707w",
+        "largest": "works/orion-constellation/display-2560.webp",
         "buttonCrop": "works/orion-constellation/button.jpg",
         "navSample": "works/orion-constellation/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAeABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBv/EABkQAQEBAAMAAAAAAAAAAAAAAAABEQIhMf/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOVxlUyzI0iQAXPVcu4hu5EEUBR//9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAeABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBv/EABkQAQEBAAMAAAAAAAAAAAAAAAABEQIhMf/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOVxlUWZGggBJc9Vy7iG7kBRQCH/2Q=="
       }
     },
     {
@@ -2696,7 +1944,7 @@
           "role": "display",
           "colorSpace": "srgb",
           "profile": null,
-          "path": "works/tree/display-2000.jpg",
+          "path": "works/tree/display-1600.jpg",
           "dimensions": {
             "width": 3435,
             "height": 5153
@@ -2704,38 +1952,12 @@
         }
       ],
       "web": {
-        "src": "works/tree/display-2000.jpg",
-        "srcset": "works/tree/display-400.jpg 400w, works/tree/display-800.jpg 800w, works/tree/display-1200.jpg 1200w, works/tree/display-1600.jpg 1600w, works/tree/display-2000.jpg 2000w",
-        "sizes": [
-          {
-            "w": 400,
-            "jpg": "works/tree/display-400.jpg",
-            "webp": "works/tree/display-400.webp"
-          },
-          {
-            "w": 800,
-            "jpg": "works/tree/display-800.jpg",
-            "webp": "works/tree/display-800.webp"
-          },
-          {
-            "w": 1200,
-            "jpg": "works/tree/display-1200.jpg",
-            "webp": "works/tree/display-1200.webp"
-          },
-          {
-            "w": 1600,
-            "jpg": "works/tree/display-1600.jpg",
-            "webp": "works/tree/display-1600.webp"
-          },
-          {
-            "w": 2000,
-            "jpg": "works/tree/display-2000.jpg",
-            "webp": "works/tree/display-2000.webp"
-          }
-        ],
+        "src": "works/tree/display-1600.jpg",
+        "srcsetWebp": "works/tree/display-400.webp 267w, works/tree/display-800.webp 533w, works/tree/display-1200.webp 800w, works/tree/display-1600.webp 1067w, works/tree/display-2560.webp 1707w",
+        "largest": "works/tree/display-2560.webp",
         "buttonCrop": "works/tree/button.jpg",
         "navSample": "works/tree/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAeABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUG/8QAIBAAAgIBBAMBAAAAAAAAAAAAAAECAxEFEiExBBQiQf/EABcBAQEBAQAAAAAAAAAAAAAAAAIDAAT/xAAaEQADAAMBAAAAAAAAAAAAAAAAARECAyES/9oADAMBAAIRAxEAPwBmenpRyxeFEN2F2afl3QdT2yRk02YvC9sygfHKM+uA3w0BWhOehK/GMtjFVNzaaTI0WqPLWS96i4L5icyTKl2y9foCM9UscugF00R//9k="
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAeABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUG/8QAHxAAAgMAAgIDAAAAAAAAAAAAAAECAxEFEgQxFCJB/8QAFwEBAQEBAAAAAAAAAAAAAAAAAgMABP/EABoRAAMAAwEAAAAAAAAAAAAAAAABEQIDIRL/2gAMAwEAAhEDEQA/AGZ8elHWLwoh2xezT8u6Eqn1kjJpsy8L2zKB8coz8cBvU0BWhOfhK/M1svqpubTSZGi1RWtaXvkXBfWJzJMqXdL1+gIz5Szt6AXTRH//2Q=="
       }
     }
   ]

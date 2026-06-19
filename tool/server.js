@@ -12,6 +12,8 @@ import {
 import { deriveWeb } from './lib/derive.js';
 import { fillAll, addOne } from './lib/placeholder.js';
 import { WORKS_DIR, CATEGORIES } from './lib/paths.js';
+import { getStore } from './lib/store.js';
+import { MASTERS_DIR } from './lib/config.js';
 
 const PORT = process.env.PORT || 4321;
 const UI = new URL('./ui.html', import.meta.url);
@@ -39,13 +41,41 @@ const server = createServer(async (req, res) => {
       await writeManifest(m);
       return json(res, 200, { slug: work.slug });
     }
-    // ingest a real upload: { dataUrl, title, category, caption, ...meta }
+    // ingest a real upload (§1.5): { dataUrl (display), title, category, ...meta,
+    //   masters: [{ dataUrl, role, variant, colorSpace, profile }] }
     if (req.method === 'POST' && url.pathname === '/api/works') {
       const data = await body(req);
       const m = await readManifest();
-      const slug = makeSlug(data.title, m.works);
+      const slug = makeSlug(data.title, m.works);      // generated once, permanent (§8)
       const buf = dataUrlToBuffer(data.dataUrl);
-      const derived = await deriveWeb(buf, slug);
+      const derived = await deriveWeb(buf, slug);       // → repo public/works/, rights baked
+
+      // store each master OUTSIDE the repo via the Store abstraction → record URIs (§1.4).
+      // Masters are never written to web/public and never shipped to the browser (Phase 1).
+      const store = getStore();
+      const masterRenditions = [];
+      for (const mst of (data.masters || [])) {
+        if (!mst || !mst.dataUrl) continue;
+        const { buffer, ext } = parseDataUrl(mst.dataUrl);
+        const rendition = {
+          role: mst.role || 'print-master',
+          variant: mst.variant || null,
+          colorSpace: mst.colorSpace || null,
+          profile: mst.profile || null,
+          format: ext,
+        };
+        const stored = await store.put(slug, rendition, buffer);
+        masterRenditions.push({
+          role: rendition.role,
+          variant: rendition.variant,
+          colorSpace: rendition.colorSpace,
+          profile: rendition.profile,
+          uri: stored.uri,             // abstract masters:// URI, NOT an absolute path
+          dimensions: stored.dimensions,
+          bytes: stored.bytes,
+        });
+      }
+
       const work = {
         slug,
         title: data.title || 'Untitled',
@@ -71,12 +101,24 @@ const server = createServer(async (req, res) => {
           ? { raCenter: num(data.raCenter), decCenter: num(data.decCenter), fovDeg: num(data.fovDeg), posAngle: num(data.posAngle), skyMapPin: data.skyMapPin !== false }
           : {}),
         commerce: { printSizes: [], substrates: [], pricePer: {}, edition: null, printAdvisory: null },
-        renditions: [{ role: 'display', colorSpace: 'srgb', profile: null, path: derived.web.src, dimensions: derived.dimensions }],
+        renditions: [
+          // display feeds the web pipeline; masters are stored + referenced, never shipped (§1.3)
+          { role: 'display', colorSpace: 'srgb', profile: null, path: derived.web.src, dimensions: derived.dimensions },
+          ...masterRenditions,
+        ],
         web: derived.web,
       };
       m.works.push(work);
       await writeManifest(m);
-      return json(res, 200, { slug, accent: derived.accent, shadowDensity: derived.shadowDensity });
+      return json(res, 200, {
+        slug,
+        accent: derived.accent,
+        shadowDensity: derived.shadowDensity,
+        mastersStored: masterRenditions.length,
+        mastersDir: MASTERS_DIR,
+        rightsBaked: !!(derived.rights && derived.rights.baked),
+        rightsWarning: derived.rights && derived.rights.skipped ? derived.rights.reason : null,
+      });
     }
     // edit metadata / curation fields
     if (req.method === 'PATCH' && url.pathname.startsWith('/api/works/')) {
@@ -143,5 +185,17 @@ function dataUrlToBuffer(dataUrl) {
   const m = /^data:[^;]+;base64,(.*)$/s.exec(dataUrl || '');
   if (!m) throw new Error('expected a base64 data URL for the image');
   return Buffer.from(m[1], 'base64');
+}
+// parse a data URL keeping the mime → derive a file extension for the stored master.
+const MIME_EXT = {
+  'image/jpeg': 'jpg', 'image/jpg': 'jpg', 'image/png': 'png', 'image/tiff': 'tiff',
+  'image/webp': 'webp', 'image/avif': 'avif', 'image/x-adobe-dng': 'dng',
+};
+function parseDataUrl(dataUrl) {
+  const m = /^data:([^;]+);base64,(.*)$/s.exec(dataUrl || '');
+  if (!m) throw new Error('expected a base64 data URL for the master');
+  const mime = m[1].toLowerCase();
+  const ext = MIME_EXT[mime] || (mime.split('/')[1] || 'bin').replace(/[^a-z0-9]/g, '');
+  return { mime, ext, buffer: Buffer.from(m[2], 'base64') };
 }
 function num(v) { return v === '' || v == null ? null : Number(v); }

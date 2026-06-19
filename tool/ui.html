@@ -83,6 +83,15 @@
             <label class="astro-only">Horizontal FOV°<input id="fovDeg" type="number" step="0.1" min="0.01" max="180" placeholder="e.g. 2.5" /></label>
             <label class="astro-only">Position angle°<input id="posAngle" type="number" step="1" min="-180" max="180" placeholder="0" /></label>
           </div>
+          <fieldset style="margin-top:1rem; border:1px solid #2a2a30; border-radius:8px; padding:.8rem;">
+            <legend style="padding:0 .4rem;">Master renditions <span class="muted">(stored OUTSIDE the repo)</span></legend>
+            <div class="banner-backup" style="background:#3a2a12; border:1px solid #6b5320; color:#e0c98a; border-radius:6px; padding:.5rem .7rem; margin-bottom:.7rem; font-size:.85rem;">
+              ⚠ <strong>Back up your masters.</strong> Until the Phase-2 CDN exists, the local master store is a single point of failure — keep at least a second copy (ideally cloud).
+            </div>
+            <p class="muted" style="margin:0 0 .6rem;">The display image above feeds the web pipeline. Add the high-res master(s) here — each is stored to the masters directory and referenced by URI in the manifest; never shipped to the browser. Add more than one for variants (sRGB, CMYK, B&W, starless…).</p>
+            <div id="masters"></div>
+            <button type="button" id="add-master" style="margin-top:.5rem;">+ Add master</button>
+          </fieldset>
           <div style="margin-top:.8rem; display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
             <label style="flex-direction:row; align-items:center; gap:.4rem;"><input type="checkbox" id="centerpieceEligible" /> Centerpiece eligible</label>
             <label style="flex-direction:row; align-items:center; gap:.4rem;"><input type="checkbox" id="isPanorama" /> Panorama</label>
@@ -189,22 +198,64 @@
       document.querySelectorAll('.astro-only').forEach(el=>el.style.display = e.target.value==='Astro'?'grid':'none');
     };
 
+    // --- master rendition rows (§1.3): repeatable, variant-labelled ---
+    const ROLES = ['print-master','starless','raw-scan','other'];
+    function addMasterRow() {
+      const row = document.createElement('div');
+      row.className = 'master-row';
+      row.style.cssText = 'display:grid; grid-template-columns:1.4fr 1fr 1fr .9fr auto; gap:.5rem; align-items:end; margin-bottom:.5rem;';
+      row.innerHTML = `
+        <label style="font-size:.8rem;">File<input type="file" class="m-file" accept="image/*,.dng,.tif,.tiff" /></label>
+        <label style="font-size:.8rem;">Role<select class="m-role">${ROLES.map(r=>`<option>${r}</option>`).join('')}</select></label>
+        <label style="font-size:.8rem;">Variant<input class="m-variant" placeholder="sRGB / CMYK / bw…" /></label>
+        <label style="font-size:.8rem;">Color space<input class="m-cs" placeholder="srgb / adobe-rgb / cmyk" /></label>
+        <button type="button" class="m-remove" title="Remove">✕</button>`;
+      row.querySelector('.m-remove').onclick = () => row.remove();
+      $('#masters').appendChild(row);
+    }
+    $('#add-master').onclick = addMasterRow;
+
+    const fileToDataUrl = (file) => new Promise((res)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.readAsDataURL(file); });
+    async function collectMasters() {
+      const out = [];
+      for (const row of document.querySelectorAll('.master-row')) {
+        const file = row.querySelector('.m-file').files[0];
+        if (!file) continue;
+        out.push({
+          dataUrl: await fileToDataUrl(file),
+          role: row.querySelector('.m-role').value,
+          variant: row.querySelector('.m-variant').value || null,
+          colorSpace: row.querySelector('.m-cs').value || null,
+        });
+      }
+      return out;
+    }
+
     $('#ingest').onsubmit = async (e) => {
       e.preventDefault();
       const file = $('#file').files[0];
       if (!file) return;
-      const dataUrl = await new Promise((res)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.readAsDataURL(file); });
+      const dataUrl = await fileToDataUrl(file);
       const get = (id) => $('#'+id).value || undefined;
+      toast('Deriving renditions…');
+      const masters = await collectMasters();
       const payload = {
-        dataUrl, title:get('title'), category:$('#category').value, caption:get('caption'),
+        dataUrl, masters, title:get('title'), category:$('#category').value, caption:get('caption'),
         location:get('location'), date:get('date'), cameraBody:get('cameraBody'), lens:get('lens'),
         focalLength:get('focalLength'), aperture:get('aperture'), shutter:get('shutter'), iso:get('iso'),
         filmStock:get('filmStock'), raCenter:get('raCenter'), decCenter:get('decCenter'),
         fovDeg:get('fovDeg'), posAngle:get('posAngle'), skyMapPin:$('#skyMapPin').checked,
         centerpieceEligible:$('#centerpieceEligible').checked, isPanorama:$('#isPanorama').checked,
       };
-      toast('Deriving renditions…');
-      try { const r = await api('POST','/api/works',payload); toast(`Added ${r.slug} · accent ${r.accent}`); e.target.reset(); render(); }
+      try {
+        const r = await api('POST','/api/works',payload);
+        let msg = `Added ${r.slug} · accent ${r.accent}`;
+        if (r.mastersStored) msg += ` · ${r.mastersStored} master(s) → ${r.mastersDir}`;
+        toast(msg);
+        if (r.rightsWarning) { console.warn(r.rightsWarning); alert('Rights metadata NOT embedded:\n\n' + r.rightsWarning); }
+        $('#masters').innerHTML = '';
+        e.target.reset(); render();
+      }
       catch (err) { toast('Error: '+err.message); }
     };
 

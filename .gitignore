@@ -134,3 +134,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Master image store (spec §1.2) — high-res originals live OUTSIDE the deployed repo
+# (default D:/Photo_Portfolio_Masters). These patterns are a defensive guard in case the
+# store, or a mirror of it, is ever placed inside the repo. Masters must never be committed.
+Photo_Portfolio_Masters/
+masters/
+*_Masters/

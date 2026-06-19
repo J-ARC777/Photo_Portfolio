@@ -3,11 +3,15 @@
 
 export const CATEGORY_ORDER = ['Astro', 'Travel', 'Landscape', 'Nature', 'Film'];
 
+// Vite's configured base ('/' in dev, '/Photo_Portfolio/' in a production build). All
+// runtime data/page URLs are built from this so the site works under a subpath on Pages.
+const BASE = import.meta.env.BASE_URL;
+
 let _cache = null;
 
 export async function loadManifest() {
   if (_cache) return _cache;
-  const res = await fetch('/data/manifest.json', { cache: 'no-cache' });
+  const res = await fetch(`${BASE}data/manifest.json`, { cache: 'no-cache' });
   if (!res.ok) throw new Error(`manifest ${res.status}`);
   const data = await res.json();
   // sort works within category by sequence (§8 sequence field)

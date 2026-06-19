@@ -6,6 +6,7 @@ import {
   navSampleSrc,
 } from './manifest.js';
 import { buildDetail } from './detail.js';
+import { buildPicture } from './image.js';
 import { prefersReduced, fadeIn } from './transitions.js';
 
 const PANO_MAX = 16 / 9;
@@ -151,15 +152,12 @@ function makeCell(w, width, isLastRow, gridEl, works, fadeIndex) {
 
   // the grid preserves NATIVE aspect — use the display rendition, never the 3:2
   // button crop (fidelity line §7; only the splash teaser uses the crop)
-  const src = w.web?.src || null;
-  if (src) {
-    const img = document.createElement('img');
-    img.src = src;
+  const built = buildPicture(w, { sizes: `${Math.round(width)}px`, loading: 'lazy' });
+  if (built) {
+    const { picture, img } = built;
     if (w.accent) img.style.background = w.accent; // fills letterbox on object-fit:contain
-    if (w.web?.srcset) { img.srcset = w.web.srcset; img.sizes = `${Math.round(width)}px`; }
     img.alt = w.alt || w.caption || w.title || 'photograph';
-    img.loading = 'lazy';
-    cell.appendChild(img);
+    cell.appendChild(picture);
   } else {
     cell.style.background = w.accent || 'var(--surface)';
   }

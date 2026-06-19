@@ -345,6 +345,8 @@ button.btn {
   cursor: pointer;
   flex: 0 0 auto;
 }
+/* <picture> is a layout-transparent wrapper — the inner <img> keeps every existing rule */
+picture { display: contents; }
 .cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cell::after { /* hover lift cue, restrained */
   content: "";

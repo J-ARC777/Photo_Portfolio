@@ -6,49 +6,90 @@
 // never shipped to the browser; this module handles only the web renditions.
 
 import sharp from 'sharp';
-import { mkdir } from 'node:fs/promises';
+import { mkdir, rm, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { WORKS_DIR } from './paths.js';
+import { MAX_LONG_EDGE } from './config.js';
+import { bakeRights } from './rights.js';
 
-const SIZES = [400, 800, 1200, 1600, 2000];
+// Responsive steps are LONG-EDGE targets, capped at MAX_LONG_EDGE (§2.1): the real
+// protection is a display-resolution ceiling — generous for full-screen viewing,
+// insufficient for a quality large print. Capping the long edge (not just width) means
+// tall portraits are bounded too.
+//
+// WebP is what ~99% of browsers actually receive (responsive set). A SINGLE JPEG is the
+// universal fallback for the rare no-WebP browser, and doubles as the canonical `src`
+// scrapers / social embeds / RSS pick up. We do NOT ship a JPEG per size — the front-end
+// serves WebP via <picture> and only falls through to the one JPEG when WebP is unsupported.
+const WEBP_SIZES = [400, 800, 1200, 1600, 2560].filter((s) => s <= MAX_LONG_EDGE);
+const JPEG_FALLBACK = Math.min(1600, MAX_LONG_EDGE); // single jpg fallback (long edge)
 
 export async function deriveWeb(inputBuffer, slug) {
   const outDir = join(WORKS_DIR, slug);
   await mkdir(outDir, { recursive: true });
+  // remove stale display renditions from a previous derivation so re-deriving never leaves
+  // orphans behind. Best-effort + per-file (never rmdir): on Windows a file held open by a
+  // viewer can't be unlinked, and that must not abort the whole derivation — we overwrite
+  // what we can and skip what's locked.
+  for (const f of await readdir(outDir).catch(() => [])) {
+    if (/^display-.*\.(jpe?g|webp)$/i.test(f)) {
+      await rm(join(outDir, f), { force: true }).catch(() => {});
+    }
+  }
 
   const img = sharp(inputBuffer, { failOn: 'none' }).rotate(); // respect EXIF orient
   const meta = await img.metadata();
   const width = meta.width || 1600;
   const height = meta.height || 1067;
   const nativeAspect = +(width / height).toFixed(4);
+  const nativeLongEdge = Math.max(width, height);
 
-  // responsive sizes (jpg + webp), capped to native width — reserve space (no CLS)
-  const srcsetJpg = [];
-  for (const w of SIZES) {
-    if (w > width * 1.05) continue;
-    await sharp(inputBuffer).rotate().resize({ width: w })
-      .jpeg({ quality: 82, mozjpeg: true })
-      .toFile(join(outDir, `display-${w}.jpg`));
-    await sharp(inputBuffer).rotate().resize({ width: w })
-      .webp({ quality: 80 })
-      .toFile(join(outDir, `display-${w}.webp`));
-    srcsetJpg.push({ w, jpg: `works/${slug}/display-${w}.jpg`, webp: `works/${slug}/display-${w}.webp` });
+  const written = []; // absolute paths of every derivative, for rights baking
+
+  // responsive WebP set. Resize into a square box → caps the LONG edge to the step (never
+  // enlarges). The srcset width descriptor uses the ACTUAL output width.
+  const webpList = [];
+  for (const s of WEBP_SIZES) {
+    if (s > nativeLongEdge * 1.05) continue;
+    const box = { width: s, height: s, fit: 'inside', withoutEnlargement: true };
+    const webpPath = join(outDir, `display-${s}.webp`);
+    const info = await sharp(inputBuffer).rotate().resize(box)
+      .webp({ quality: 80 }).toFile(webpPath);
+    written.push(webpPath);
+    webpList.push({ w: info.width, path: `works/${slug}/display-${s}.webp` });
   }
-  if (!srcsetJpg.length) {
-    await sharp(inputBuffer).rotate().jpeg({ quality: 82 })
-      .toFile(join(outDir, `display-${width}.jpg`));
-    srcsetJpg.push({ w: width, jpg: `works/${slug}/display-${width}.jpg` });
+  if (!webpList.length) {
+    // tiny source smaller than the smallest step: emit a single capped WebP
+    const webpPath = join(outDir, `display-${nativeLongEdge}.webp`);
+    const info = await sharp(inputBuffer).rotate()
+      .resize({ width: MAX_LONG_EDGE, height: MAX_LONG_EDGE, fit: 'inside', withoutEnlargement: true })
+      .webp({ quality: 80 }).toFile(webpPath);
+    written.push(webpPath);
+    webpList.push({ w: info.width, path: `works/${slug}/display-${nativeLongEdge}.webp` });
   }
-  const largest = srcsetJpg[srcsetJpg.length - 1];
+
+  // single JPEG fallback (capped to native + the global cap)
+  const jpgEdge = Math.min(JPEG_FALLBACK, nativeLongEdge);
+  const jpgPath = join(outDir, `display-${jpgEdge}.jpg`);
+  await sharp(inputBuffer).rotate()
+    .resize({ width: jpgEdge, height: jpgEdge, fit: 'inside', withoutEnlargement: true })
+    .jpeg({ quality: 82, mozjpeg: true }).toFile(jpgPath);
+  written.push(jpgPath);
+
+  const largestWebp = webpList[webpList.length - 1].path;
 
   // 3:2 landscape button crop teaser (§5.2)
+  const buttonPath = join(outDir, 'button.jpg');
   await sharp(inputBuffer).rotate().resize({ width: 600, height: 400, fit: 'cover' })
-    .jpeg({ quality: 80 }).toFile(join(outDir, 'button.jpg'));
+    .jpeg({ quality: 80 }).toFile(buttonPath);
+  written.push(buttonPath);
 
   // blurred + desaturated nav-bar sample (§5.3)
+  const navPath = join(outDir, 'navsample.jpg');
   await sharp(inputBuffer).rotate().resize({ width: 320 }).blur(8)
     .modulate({ saturation: 0.5, brightness: 0.6 })
-    .jpeg({ quality: 60 }).toFile(join(outDir, 'navsample.jpg'));
+    .jpeg({ quality: 60 }).toFile(navPath);
+  written.push(navPath);
 
   // blur-up placeholder (tiny base64, inlined into manifest)
   const tiny = await sharp(inputBuffer).rotate().resize({ width: 20 }).blur(2)
@@ -58,15 +99,20 @@ export async function deriveWeb(inputBuffer, slug) {
   const accent = await extractAccent(inputBuffer);
   const shadowDensity = await measureShadows(inputBuffer);
 
+  // bake IPTC/XMP rights into every web derivative (§2.2). Degrades gracefully if
+  // ExifTool is absent — derivation still succeeds; rights.skipped is surfaced upstream.
+  const rights = await bakeRights(written);
+
   return {
     nativeAspect,
     dimensions: { width, height },
     accent,
     shadowDensity,
+    rights,
     web: {
-      src: largest.jpg,
-      srcset: srcsetJpg.map((s) => `${s.jpg} ${s.w}w`).join(', '),
-      sizes: srcsetJpg,
+      src: `works/${slug}/display-${jpgEdge}.jpg`, // JPEG fallback + canonical src
+      srcsetWebp: webpList.map((x) => `${x.path} ${x.w}w`).join(', '), // responsive WebP
+      largest: largestWebp,                          // biggest WebP, for the lightbox
       buttonCrop: `works/${slug}/button.jpg`,
       navSample: `works/${slug}/navsample.jpg`,
       placeholder,

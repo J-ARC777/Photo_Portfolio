@@ -2,7 +2,8 @@
 // Builds a self-contained "composite = image + info panel" element with the
 // photo-derived accent applied locally (single-work view, §4.1).
 
-import { metaParts, displaySrc } from './manifest.js';
+import { metaParts } from './manifest.js';
+import { buildPicture, largestSrc } from './image.js';
 import { openImageLightbox } from './lightbox.js';
 
 const ICON = {
@@ -20,16 +21,16 @@ export function buildDetail(work, { onPrev, onNext, onClose }) {
 
   // ---- image side ----
   const imgSide = el('div', 'detail__img');
-  const src = displaySrc(work);
-  if (src) {
-    const img = el('img');
-    img.src = src;
+  const built = buildPicture(work, { sizes: '(max-width: 900px) 96vw, 60vw', loading: 'eager' });
+  if (built) {
+    const { picture, img } = built;
     img.alt = work.alt || work.caption || work.title || 'photograph';
     img.style.background = work.accent || 'var(--surface)';
     img.style.cursor = 'zoom-in';
     img.title = 'Click to view full size';
-    img.addEventListener('click', () => openImageLightbox(src, img.alt));
-    imgSide.appendChild(img);
+    const full = largestSrc(work); // biggest WebP for the full-screen view
+    img.addEventListener('click', () => openImageLightbox(full, img.alt));
+    imgSide.appendChild(picture);
   } else {
     imgSide.appendChild(swatch(work));
   }
