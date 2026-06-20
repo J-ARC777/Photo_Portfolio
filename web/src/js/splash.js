@@ -92,9 +92,11 @@ function catButton(category, works, count) {
     cells.push(c);
     cluster.appendChild(c.el);
   }
-  // initial fill — distinct surrounds via slot offset
-  heroCell.set(heroSet[0]);
-  surroundCells.forEach((c, k) => c.set(n ? works[k % n] : null));
+  // initial fill — surrounds never show the hero image; blank cells when pool is thin
+  const initHero = heroSet[0];
+  heroCell.set(initHero);
+  const initPool = initHero ? works.filter(w => w !== initHero) : works;
+  surroundCells.forEach((c, k) => c.set(k < initPool.length ? initPool[k] : null));
 
   frame.appendChild(cluster);
 
@@ -168,15 +170,18 @@ function wakeBehaviour(btn, frame, cluster, state) {
     let offset = 0;
     const start = () => {
       stop();
-      timers.push(setInterval(() => {                 // hero: curated subset (§5.2)
+      timers.push(setInterval(() => {
         heroIdx = (heroIdx + 1) % heroSet.length;
-        heroCell.set(heroSet[heroIdx]);
+        const newHero = heroSet[heroIdx];
+        heroCell.set(newHero);
+        if (n >= 2) {                                 // surrounds only reshuffle when
+          offset = (offset + 1) % n;                 // the front image changes
+          const pool = newHero ? works.filter(w => w !== newHero) : works;
+          const plen = pool.length;
+          surroundCells.forEach((c, k) =>
+            c.set(k < plen ? pool[(k + offset) % plen] : null));
+        }
       }, 6000));
-      timers.push(setInterval(() => {                 // surrounds rotate as a block,
-        if (n < 2) return;                            // staying mutually distinct
-        offset = (offset + 1) % n;
-        surroundCells.forEach((c, k) => c.set(works[(k + offset) % n]));
-      }, 3200));
     };
     const stop = () => { timers.forEach(clearInterval); timers = []; };
     start();
@@ -276,7 +281,7 @@ function startStarfield() {
   }
 
   // parallax computed RELATIVE TO THE HERO BOX, not the window
-  let tx = 0, ty = 0, gx = 0, gy = 0, scrollY = 0;
+  let tx = 0, ty = 0, vx = 0, vy = 0, gx = 0, gy = 0, scrollY = 0;
   if (!REDUCED) {
     hero.addEventListener('pointermove', (e) => {
       const r = hero.getBoundingClientRect();
@@ -290,7 +295,8 @@ function startStarfield() {
 
   const MAX_SHIFT = 95;    // pointer-tilt parallax — pulled back so close stars don't sweep too far
   const SCROLL_PAR = 0.45; // vertical drift on scroll — star depth separation reads as you move down
-  const FOLLOW = 0.02;     // low = heavily damped, lags well behind the cursor
+  const SPRING   = 0.001;  // spring stiffness — how fast velocity builds toward the mouse target
+  const FRICTION  = 0.92;  // velocity retention per frame — higher = more coasting momentum
 
   // Pre-render a 64×64 glow sprite once: white-blue core fading to transparent.
   // drawImage is far cheaper than creating a radial gradient per star per frame.
@@ -347,10 +353,9 @@ function startStarfield() {
   }
 
   function frame() {
-    // heavy damping + a slow target decay → motion trails the cursor and eases
-    // back on its own, so it never feels 1:1 with the mouse
-    tx += (gx - tx) * FOLLOW; ty += (gy - ty) * FOLLOW;
-    gx *= 0.97; gy *= 0.97;
+    vx += (gx - tx) * SPRING;  vy += (gy - ty) * SPRING;
+    vx *= FRICTION;             vy *= FRICTION;
+    tx += vx;                   ty += vy;
     paint(tx, ty);
     requestAnimationFrame(frame);
   }
