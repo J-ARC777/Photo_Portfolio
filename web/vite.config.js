@@ -20,6 +20,7 @@ export default defineConfig(({ command }) => ({
         landscape: resolve(root, 'landscape.html'),
         nature: resolve(root, 'nature.html'),
         film: resolve(root, 'film.html'),
+        otherworlds: resolve(root, 'other-worlds.html'),
         license: resolve(root, 'license.html'),
       },
     },
