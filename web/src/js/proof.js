@@ -20,11 +20,13 @@ const S      = CVS / SRC;
 const WALL_H = 945; // wall area only — excludes baseboard + floor
 
 // ─── Asset paths ──────────────────────────────────────────────────────────────
+// BASE is Vite's configured base ('/' dev, '/Photo_Portfolio/' on Pages).
+const BASE = import.meta.env.BASE_URL;
 const pad = i => String(i + 1).padStart(4, '0');
-const wallPath   = i => `/vIewer_tool/Wall/Image${pad(i)}.jpg`;
-const imagePath  = i => `/vIewer_tool/Image/Image${pad(i)}.jpg`;
-const shadowPath = i => `/vIewer_tool/Shadow/Image${pad(i)}.jpg`;
-const bouncePath = i => `/vIewer_tool/Bounce/${pad(i)}.jpg`;
+const wallPath   = i => `${BASE}vIewer_tool/Wall/Image${pad(i)}.jpg`;
+const imagePath  = i => `${BASE}vIewer_tool/Image/Image${pad(i)}.jpg`;
+const shadowPath = i => `${BASE}vIewer_tool/Shadow/Image${pad(i)}.jpg`;
+const bouncePath = i => `${BASE}vIewer_tool/Bounce/${pad(i)}.jpg`;
 
 // ─── Module-level frame caches (shared across detail-panel instances) ─────────
 let   _maskBounds  = null;
@@ -155,7 +157,7 @@ export function buildProof(work) {
   if (_maskBounds) {
     maskBounds = _maskBounds;
   } else {
-    loadImg('/vIewer_tool/MASK.jpg').then(img => {
+    loadImg(`${BASE}vIewer_tool/MASK.jpg`).then(img => {
       _maskBounds = analyzeMask(img);
       maskBounds  = _maskBounds;
       if (photo) frameRect = computeFrameRect(maskBounds, photo.naturalWidth, photo.naturalHeight);

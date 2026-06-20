@@ -10,10 +10,15 @@ import { fadeIn } from './transitions.js';
 
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// The deep parallax plate behind the synthetic starfield — a STARLESS galaxy so the
+// decorative stars overlay cleanly without doubling. Swap the slug to change the plate.
+const SPLASH_PLATE_SLUG = 'andromeda-galaxy-starless';
+
 init();
 
 async function init() {
   const manifest = await loadManifest();
+  setSplashPlate(manifest);
   buildCategories(manifest);
 
   // Astro is the star canvas itself, not a 3x3 button — surface its live count on the CTA
@@ -21,6 +26,31 @@ async function init() {
   if (ac) ac.textContent = `( ${countIn(manifest, 'Astro')} )`;
 
   startStarfield();
+
+  const identity = document.querySelector('.splash__identity');
+  if (identity) {
+    window.addEventListener('scroll', () => {
+      identity.style.opacity = Math.max(0, 1 - window.scrollY / 220);
+    }, { passive: true });
+  }
+}
+
+// Drop the starless galaxy into the plate. Relative manifest path resolves against the
+// document URL (so it's correct under the Pages base). A radial veil darkens the edges +
+// keeps the title/tagline legible over the bright core; falls back to the CSS gradient if
+// the work isn't in the manifest.
+function setSplashPlate(manifest) {
+  const plate = document.querySelector('[data-plate]');
+  if (!plate) return;
+  const work = (manifest.works || []).find((w) => w.slug === SPLASH_PLATE_SLUG);
+  const src = work && work.web && (work.web.largest || work.web.src);
+  if (!src) return;
+  plate.style.backgroundImage = `url("${src}")`;
+  // the plate element stays fixed — only the background image position moves,
+  // drifting upward as the user scrolls so the galaxy core stays visible longer.
+  window.addEventListener('scroll', () => {
+    plate.style.backgroundPositionY = `calc(32% - ${window.scrollY * 0.25}px)`;
+  }, { passive: true });
 }
 
 function buildCategories(manifest) {
@@ -196,11 +226,44 @@ function startStarfield() {
   if (!ctx) return; // no-canvas fallback → plate + UI only (nothing load-bearing)
 
   let stars = [];
+  const HERO_COUNT = 7;
   function seed() {
-    const n = Math.min(380, Math.round((canvas.width * canvas.height) / 7000));
-    stars = Array.from({ length: n }, () => ({
-      x: Math.random(), y: Math.random(), z: Math.random(), r: 0.3 + Math.random() * 1.3,
-    }));
+    // unified pool — every star has its own z (distance) and therefore its own
+    // parallax rate. No discrete layers. Power distribution (exponent 2.5) means
+    // most stars cluster near z=0 (far, barely moving) and a handful land near z=1
+    // (close, sweeping). Hero stars are seeded explicitly so we always have ≥7
+    // clearly close foreground points.
+    const total = Math.min(4500, Math.round((canvas.width * canvas.height) / 733));
+    stars = [];
+
+    // hero stars — explicitly close, always get the glow sprite
+    for (let i = 0; i < HERO_COUNT; i++) {
+      stars.push({
+        x: Math.random(),
+        y: -0.15 + Math.random() * 1.35,
+        z: 0.80 + Math.random() * 0.20,
+        r: (0.7 + Math.random() * 0.9) * (1.3 + Math.random() * 0.4),
+        sx: 0.82 + Math.random() * 0.36,
+        sy: 0.82 + Math.random() * 0.36,
+      });
+    }
+
+    // field stars — logarithmic z: -log(rand)*k gives a heavy tail near 0 so ~85%
+    // of stars barely drift while the top 10-15% have meaningful parallax depth.
+    for (let i = HERO_COUNT; i < total; i++) {
+      const z = Math.min(1, -Math.log(Math.random()) * 0.13);
+      const rMult = 1 + Math.max(0, (z - 0.4) * 1.5); // size rises gently above z=0.4
+      stars.push({
+        x: Math.random(),
+        y: -0.15 + Math.random() * 1.35, // ±15% buffer: scroll reveals stars at edges
+        z,
+        r: (z <= 0.5 ? 0.36 + Math.random() * 1.20   // 2× for far background
+                    : 0.18 + Math.random() * 0.60)  // original for closer stars
+             * rMult,
+        sx: 0.82 + Math.random() * 0.36,
+        sy: 0.82 + Math.random() * 0.36,
+      });
+    }
   }
   function resize() {
     const dpr = Math.min(2, window.devicePixelRatio || 1);
@@ -225,24 +288,60 @@ function startStarfield() {
     window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
   }
 
-  const MAX_SHIFT = 56;    // pointer-tilt parallax (was 20 — ~3x deeper)
-  const SCROLL_PAR = 0.5;  // exaggerated scroll-driven vertical parallax
+  const MAX_SHIFT = 95;    // pointer-tilt parallax — pulled back so close stars don't sweep too far
+  const SCROLL_PAR = 0.45; // vertical drift on scroll — star depth separation reads as you move down
   const FOLLOW = 0.02;     // low = heavily damped, lags well behind the cursor
+
+  // Pre-render a 64×64 glow sprite once: white-blue core fading to transparent.
+  // drawImage is far cheaper than creating a radial gradient per star per frame.
+  const starSprite = (() => {
+    const S = 64, half = S / 2;
+    const sc = document.createElement('canvas');
+    sc.width = sc.height = S;
+    const sg = sc.getContext('2d');
+    const grad = sg.createRadialGradient(half, half, 0, half, half, half);
+    grad.addColorStop(0,    'rgba(230, 235, 255, 1.00)');
+    grad.addColorStop(0.10, 'rgba(215, 225, 255, 0.90)');
+    grad.addColorStop(0.30, 'rgba(200, 215, 255, 0.45)');
+    grad.addColorStop(0.60, 'rgba(190, 210, 255, 0.12)');
+    grad.addColorStop(1,    'rgba(190, 210, 255, 0.00)');
+    sg.fillStyle = grad;
+    sg.fillRect(0, 0, S, S);
+    return sc;
+  })();
+
+  // Gradient sprite for close stars (z ≥ 0.8) — glow falloff makes them read as bright
+  // foreground points. Drawn at 4× r so the halo has room to breathe.
+  function drawSprite(cx, cy, r, sx = 1, sy = 1) {
+    const w = r * 4 * sx, h = r * 4 * sy;
+    ctx.drawImage(starSprite, cx - w / 2, cy - h / 2, w, h);
+  }
+
+  // Plain ellipse for the vast majority of background/mid stars — cheap and visible
+  // at the small sizes these stars occupy.
+  function drawEllipse(cx, cy, r, sx = 1, sy = 1) {
+    const rx = Math.max(0.35, r * 0.55) * sx;
+    const ry = Math.max(0.35, r * 0.55) * sy;
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+    ctx.fill();
+  }
 
   function paint(ox, oy) {
     const w = hero.clientWidth, h = hero.clientHeight;
     ctx.clearRect(0, 0, w, h);
     const parY = scrollY * SCROLL_PAR;
+    ctx.fillStyle = '#d8e2ff';
     for (const s of stars) {
-      const depth = 0.4 + s.z * 0.9;
+      const depth = 0.25 + s.z * 1.75;
       const x = s.x * w + ox * MAX_SHIFT * s.z;
-      // deeper stars (higher z) move faster on scroll → pronounced depth parallax
-      const y = s.y * h + oy * MAX_SHIFT * s.z - parY * (0.25 + s.z * 1.1);
-      ctx.globalAlpha = 0.35 + s.z * 0.6;
-      ctx.beginPath();
-      ctx.arc(x, y, s.r * depth, 0, Math.PI * 2);
-      ctx.fillStyle = '#eef';
-      ctx.fill();
+      const y = s.y * h + oy * MAX_SHIFT * s.z - parY * (0.15 + s.z * 1.6);
+      ctx.globalAlpha = 0.28 + s.z * 0.62;
+      if (s.z >= 0.8) {
+        drawSprite(x, y, s.r * depth, s.sx, s.sy);
+      } else {
+        drawEllipse(x, y, s.r * depth, s.sx, s.sy);
+      }
     }
     ctx.globalAlpha = 1;
   }

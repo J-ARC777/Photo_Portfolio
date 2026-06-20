@@ -45,7 +45,7 @@ async function init() {
   const camera = new THREE.PerspectiveCamera(FOV_BASE, 1, 0.1, R * 4);
   const starField = new StarField(await loadRealCatalog(R), () => render());
   scene.add(starField.points);
-  buildMilkyWay(scene, R);
+  buildMilkyWay(scene, R, render);
   addCelestialGrid(scene, R);
   const ncpEl = buildNcpMarker(layer);
 
@@ -335,20 +335,13 @@ async function init() {
   window.addEventListener('resize', () => { resize(); render(); });
 }
 
-function buildMilkyWay(scene, R) {
-  const tex = new THREE.TextureLoader().load(`${import.meta.env.BASE_URL}milkyway.jpg`);
-  tex.minFilter = THREE.LinearMipmapLinearFilter;
-  tex.magFilter = THREE.LinearFilter;
-  tex.generateMipmaps = true;
-
+function buildMilkyWay(scene, R, onUpdate) {
   // ShaderMaterial computes UV from object-space position in the fragment shader,
   // bypassing Three.js sphere UV attributes which stretch/compress near the poles.
-  // u = atan(z, -x)/(2π) + 0.5 replicates Three.js SphereGeometry's UV convention
-  // (u=0.5 at +X, increasing counterclockwise when viewed from +Y).
   const mat = new THREE.ShaderMaterial({
     uniforms: {
-      uMap:     { value: tex },
-      uOpacity: { value: 0.5 },
+      uMap:     { value: new THREE.Texture() },
+      uOpacity: { value: 0.0 },
     },
     vertexShader: `
       varying vec3 vPos;
@@ -364,17 +357,24 @@ function buildMilkyWay(scene, R) {
       const float PI = 3.141592653589793;
       void main() {
         vec3 d = normalize(vPos);
-        float u = mod(1.0 - atan(d.z, -d.x) / (2.0 * PI), 1.0);
+        float u = mod(atan(d.z, -d.x) / (2.0 * PI), 1.0);
         float v = 1.0 - acos(clamp(d.y, -1.0, 1.0)) / PI;
-        vec4 col = texture2D(uMap, vec2(u, v));
+        // Clamp v to avoid the pinched/stretched pole rows, then soft-fade the boundary
+        // so the held row dissolves to transparent rather than leaving a visible ring.
+        float vSafe = clamp(v, 0.20, 0.80);
+        float poleFade = smoothstep(0.17, 0.23, v) * smoothstep(0.83, 0.77, v);
+        vec4 col = texture2D(uMap, vec2(u, vSafe));
         float luma = dot(col.rgb, vec3(0.299, 0.587, 0.114));
         col.rgb = mix(vec3(luma), col.rgb, 0.72);
-        gl_FragColor = vec4(col.rgb, uOpacity);
+        // Normal blending: drive alpha from luminance so dark sky stays transparent.
+        // Bright galactic band shows; empty sky and pole caps become invisible.
+        float alpha = clamp(luma * 2.5, 0.0, 1.0) * uOpacity * poleFade;
+        gl_FragColor = vec4(col.rgb, alpha);
       }
     `,
     side: THREE.BackSide,
     transparent: true,
-    blending: THREE.AdditiveBlending,
+    blending: THREE.NormalBlending,
     depthWrite: false,
   });
 
@@ -403,6 +403,22 @@ function buildMilkyWay(scene, R) {
   ));
 
   scene.add(mesh);
+
+  // Load texture and fade in over 1.5 s so the Milky Way dissolves in rather than snapping.
+  new THREE.TextureLoader().load(`${import.meta.env.BASE_URL}milkyway.jpg`, (tex) => {
+    tex.minFilter = THREE.LinearMipmapLinearFilter;
+    tex.magFilter = THREE.LinearFilter;
+    tex.generateMipmaps = true;
+    mat.uniforms.uMap.value = tex;
+    const TARGET = 0.7, DUR = 1500;
+    const t0 = performance.now();
+    (function tick(t) {
+      const k = Math.min(1, (t - t0) / DUR);
+      mat.uniforms.uOpacity.value = TARGET * k;
+      onUpdate();
+      if (k < 1) requestAnimationFrame(tick);
+    })(performance.now());
+  });
 }
 
 function addCelestialGrid(scene, R) {

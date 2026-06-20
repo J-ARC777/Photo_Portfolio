@@ -1,7 +1,7 @@
 // Loads the JSON manifest (§8) and exposes light query helpers.
 // The front-end is a static consumer of plain data files.
 
-export const CATEGORY_ORDER = ['Astro', 'Travel', 'Landscape', 'Nature', 'Film'];
+export const CATEGORY_ORDER = ['Astro', 'Travel', 'Landscape', 'Nature', 'Film', 'Other Worlds'];
 
 // Vite's configured base ('/' in dev, '/Photo_Portfolio/' in a production build). All
 // runtime data/page URLs are built from this so the site works under a subpath on Pages.
@@ -35,7 +35,7 @@ export function countIn(manifest, category) {
 export function neighbourHref(category, dir /* -1 prev, +1 next */) {
   const i = CATEGORY_ORDER.indexOf(category);
   const j = i + dir;
-  if (j < 0 || j >= CATEGORY_ORDER.length) return '/'; // wrap through splash
+  if (j < 0 || j >= CATEGORY_ORDER.length) return BASE; // wrap through splash
   return pageFor(CATEGORY_ORDER[j]);
 }
 
@@ -47,8 +47,9 @@ export function neighbourCategory(category, dir) {
 }
 
 export function pageFor(category) {
-  if (category === 'Astro') return '/astro.html';
-  return `/${category.toLowerCase()}.html`;
+  if (category === 'Astro') return `${BASE}astro.html`;
+  if (category === 'Other Worlds') return `${BASE}other-worlds.html`;
+  return `${BASE}${category.toLowerCase()}.html`;
 }
 
 // absence is silent (§2 corollary): only join fields that have a value.

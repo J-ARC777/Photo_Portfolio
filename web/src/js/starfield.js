@@ -214,8 +214,9 @@ export class StarField {
   }
 
   _loadStarTextures() {
-    const tight = this._makeProceduralTex(7.0); // fallback until PNGs load
-    const wide = this._makeProceduralTex(2.5);
+    const tight = this._makeProceduralTex(18.0);
+    const wide  = this._makeProceduralTex(5.0);
+    let loaded = 0;
     const loader = new THREE.TextureLoader();
     const base = import.meta.env.BASE_URL;
     const apply = (uniform) => (tex) => {
@@ -224,7 +225,20 @@ export class StarField {
       tex.magFilter = THREE.LinearFilter;
       tex.wrapS = tex.wrapT = THREE.ClampToEdgeWrapping;
       if (this.material) this.material.uniforms[uniform].value = tex;
-      if (this._onTextureLoad) this._onTextureLoad();
+      // Reveal stars only once both real textures are ready, then fade in exposure.
+      if (++loaded === 2 && this.points) {
+        this.points.visible = true;
+        const target = this.material.uniforms.uExposure.value;
+        this.material.uniforms.uExposure.value = 0;
+        const DUR = 1200, t0 = performance.now();
+        const tick = (t) => {
+          const k = Math.min(1, (t - t0) / DUR);
+          this.material.uniforms.uExposure.value = target * k;
+          if (this._onTextureLoad) this._onTextureLoad();
+          if (k < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
     };
     loader.load(`${base}star_2d_tight.png`, apply('uStarTex'));
     loader.load(`${base}star_2d_wide.png`, apply('uStarTexWide'));
@@ -281,6 +295,7 @@ export class StarField {
 
     this.points = new THREE.Points(this.geometry, this.material);
     this.points.frustumCulled = false;
+    this.points.visible = false; // revealed once both PNG textures load
   }
 
   setFov(fov) { this.material.uniforms.uFov.value = fov; }

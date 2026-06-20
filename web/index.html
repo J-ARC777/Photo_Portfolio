@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- paint charcoal on first frame (avoids a white flash on navigation) -->
-  <style>html{background:#101014}</style>
+  <style>html{background:#08080a}</style>
   <title>Jeremy Ivan — Photography</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,12 +18,14 @@
          free-floating viewport canvas: bounds + parallax frame track the hero. -->
     <section class="splash__hero" data-hero>
       <!-- back-to-front: photographic plate (LCP) → starfield (post-LCP) → UI (§5.1) -->
-      <div class="splash__plate" aria-hidden="true"></div>
+      <div class="splash__plate" data-plate aria-hidden="true"></div>
       <canvas class="splash__stars" data-stars aria-hidden="true"></canvas>
       <div class="splash__hero-ui">
-        <h1 class="splash__name display">Jeremy Ivan</h1>
-        <p class="splash__tagline">Stellar cartography &amp; the world below it</p>
-        <a class="splash__cta" href="/astro.html" data-astro-cta>
+        <div class="splash__identity">
+          <h1 class="splash__name display">Jeremy Ivan Photography</h1>
+          <p class="splash__tagline">Stellar cartography &amp; the world below it</p>
+        </div>
+        <a class="splash__cta" href="astro.html" data-astro-cta>
           Enter the sky map <span aria-hidden="true">→</span>
           <span class="count" data-astro-count></span>
         </a>

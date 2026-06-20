@@ -91,9 +91,8 @@ button.btn {
   height: 80svh;            /* ~80/20 so a peek of controls sits above fold */
   min-height: 420px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--base);
+  border-bottom: 3px solid var(--amber);
 }
 .splash__plate,
 .splash__stars {
@@ -103,17 +102,29 @@ button.btn {
   height: 100%;
 }
 .splash__plate {
-  /* the starless photographic plate stand-in (LCP element) */
-  background:
-    radial-gradient(120% 90% at 50% 8%, #2a2b34 0%, #1b1c22 42%, var(--base) 78%);
+  /* the starless photographic plate (LCP element). The galaxy image is set in
+     splash.js (base-aware path + legibility veil); this gradient is the fallback
+     before JS runs / if the work is missing. Scroll-driven upward translation is
+     applied via JS; pointer position has no effect on the plate.
+     background-color is re-declared after the shorthand so it survives JS
+     backgroundImage overrides — transparent areas in the veil reveal --base,
+     matching the hero background and content below the hairline. */
+  background-color: var(--base);
+  background-size: cover;
+  background-position: center 32%;
   z-index: 0;
 }
 .splash__stars { z-index: 1; }
 .splash__hero-ui {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11% 2rem 12%;
   text-align: center;
-  padding: 2rem;
 }
 .splash__name {
   font-size: clamp(2rem, 6vw, 4.2rem);
@@ -123,7 +134,7 @@ button.btn {
 .splash__tagline {
   color: var(--text-3);
   letter-spacing: 0.04em;
-  margin: 0 0 2rem;
+  margin: 0;
 }
 .splash__cta {
   display: inline-flex;
@@ -149,7 +160,10 @@ button.btn {
   gap: 1.6rem;
   padding: 2.4rem 10vw 4rem;
 }
-.cat { flex: 0 0 calc((80vw - 3.2rem) / 3); }
+/* three per row: size each column off the container's inner width (already inset 10vw via
+   the padding above), NOT the viewport — 80vw + scrollbar would overflow and wrap to 2.
+   100% − two 1.6rem gaps, split three ways. */
+.cat { flex: 0 0 calc((100% - 3.2rem) / 3); }
 
 /* §5.2 category button — 3x3 uniform-crop (3:2) teaser */
 .cat {
@@ -184,6 +198,7 @@ button.btn {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
+  clip-path: inset(0 round 8px);
   background: var(--elevated);
   aspect-ratio: 3 / 2;       /* fixed uniform crop — NOT justified (§5.2) */
 }
@@ -341,6 +356,7 @@ button.btn {
   border: 0;
   padding: 0;
   border-radius: 10px;
+  clip-path: inset(0 round 10px);
   background: var(--surface);
   cursor: pointer;
   flex: 0 0 auto;
@@ -399,6 +415,7 @@ picture { display: contents; }
   width: auto; height: auto;     /* native aspect always restored (§5.5) */
   object-fit: contain;
   border-radius: 8px;
+  clip-path: inset(0 round 8px);
 }
 /* the image/info seam — the one hairline that protects the photo edge (§4.3) */
 .detail__info {
@@ -557,7 +574,7 @@ picture { display: contents; }
   height: 100svh;
   overflow: hidden;
   /* planetarium reads near-black, much darker than the museum-wall base */
-  background: radial-gradient(150% 130% at 50% 32%, #070810, #030307 70%, #000 100%);
+  background: var(--base);
 }
 .astro__bar {
   position: absolute;

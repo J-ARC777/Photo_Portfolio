@@ -3,7 +3,7 @@
    The only fixed accent is "Starlight amber"; in single-work views a
    photo-derived accent (--accent) temporarily overrides it. */
 :root {
-  --base: #101014;          /* museum wall, charcoal lifted off black */
+  --base: #08080a;          /* avg of site charcoal #101014 and image black #000000 */
   --surface: #17171b;
   --elevated: #1f1f23;
   --hairline: rgba(255, 255, 255, 0.11);
