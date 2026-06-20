@@ -144,12 +144,16 @@ export function buildProof(work) {
   let rafId      = null;
   let destroyed  = false;
 
-  // ── Fade-in — reveal after all wall + image keyframes are ready ───────────
+  // ── Fade-in — reveal once the initial view (2 bracketing keyframes) is ready ─
+  // Only gate on the frames needed for dayNight=0.5 (the starting slider position)
+  // so mobile doesn't fire 54 image requests at open-time. The existing preload()
+  // call inside doRender() handles progressive loading as the slider moves.
   wrap.style.opacity    = '0';
   wrap.style.transition = 'opacity 0.4s ease';
   let _loadedCount = 0;
+  const GATE = 4; // wall×2 + image×2 for initial bracket
   function onKeyframeReady() {
-    if (++_loadedCount >= KEY_COUNT * 2) wrap.style.opacity = '1';
+    if (++_loadedCount >= GATE) wrap.style.opacity = '1';
     scheduleRender();
   }
 
@@ -174,13 +178,15 @@ export function buildProof(work) {
     }).catch(() => {});
   }
 
-  // Preload all keyframes upfront — wall + image gate the fade-in, shadow is best-effort
-  for (let k = 0; k < KEY_COUNT; k++) {
-    const idx = k * STEP;
-    fetchFrame(_wallCache,   wallPath,   idx).then(onKeyframeReady);
-    fetchFrame(_imageCache,  imagePath,  idx).then(onKeyframeReady);
-    fetchFrame(_shadowCache, shadowPath, idx);
-  }
+  // Load only the initial bracketing keyframes (for dayNight=0.5); the rest are
+  // fetched on-demand via preload() inside doRender() as the slider moves.
+  const { i0: initI0, i1: initI1 } = toKeyframes(dayNight);
+  fetchFrame(_wallCache,   wallPath,   initI0).then(onKeyframeReady);
+  fetchFrame(_wallCache,   wallPath,   initI1).then(onKeyframeReady);
+  fetchFrame(_imageCache,  imagePath,  initI0).then(onKeyframeReady);
+  fetchFrame(_imageCache,  imagePath,  initI1).then(onKeyframeReady);
+  fetchFrame(_shadowCache, shadowPath, initI0);
+  fetchFrame(_shadowCache, shadowPath, initI1);
 
   // ── Render ─────────────────────────────────────────────────────────────────
   // Maps slider t (0–1) to the two bracketing keyframe indices and blend alpha.

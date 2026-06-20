@@ -859,306 +859,6 @@
       "placeholder": true
     },
     {
-      "slug": "diner-counter",
-      "title": "Diner Counter",
-      "category": "Film",
-      "caption": "Portra at the end of a shift.",
-      "sequence": 0,
-      "centerpieceEligible": true,
-      "alt": "Diner Counter — placeholder image",
-      "cameraBody": null,
-      "lens": "24-70mm f/2.8",
-      "focalLength": "50mm",
-      "aperture": "f/1.4",
-      "shutter": "1/2000",
-      "iso": 100,
-      "filmStock": "Kodak Portra 400",
-      "date": "2020",
-      "location": "Somewhere worth returning to",
-      "nativeAspect": 1.5,
-      "isPanorama": false,
-      "shadowDensity": 0.902,
-      "accent": "#bf7840",
-      "commerce": {
-        "printSizes": [],
-        "substrates": [],
-        "pricePer": {},
-        "edition": null,
-        "printAdvisory": null
-      },
-      "renditions": [
-        {
-          "role": "display",
-          "colorSpace": "srgb",
-          "profile": null,
-          "path": "works/diner-counter/display-1600.jpg",
-          "dimensions": {
-            "width": 1800,
-            "height": 1200
-          }
-        }
-      ],
-      "web": {
-        "src": "works/diner-counter/display-1600.jpg",
-        "srcsetWebp": "works/diner-counter/display-400.webp 400w, works/diner-counter/display-800.webp 800w, works/diner-counter/display-1200.webp 1200w, works/diner-counter/display-1600.webp 1600w",
-        "largest": "works/diner-counter/display-1600.webp",
-        "buttonCrop": "works/diner-counter/button.jpg",
-        "navSample": "works/diner-counter/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAYEAEBAQEBAAAAAAAAAAAAAAAAAQIhMf/EABYBAQEBAAAAAAAAAAAAAAAAAAMAAf/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDChmZmTpQASpvoVCZX/9k="
-      },
-      "placeholder": true
-    },
-    {
-      "slug": "backyard-july",
-      "title": "Backyard, July",
-      "category": "Film",
-      "caption": "Grain and afternoon haze.",
-      "sequence": 1,
-      "centerpieceEligible": false,
-      "alt": "Backyard, July — placeholder image",
-      "cameraBody": null,
-      "lens": "35mm f/1.4",
-      "focalLength": "50mm",
-      "aperture": "f/2.8",
-      "shutter": "1/250",
-      "iso": 400,
-      "filmStock": "Kodak Gold 200",
-      "date": "2021",
-      "location": "Somewhere worth returning to",
-      "nativeAspect": 1.3997,
-      "isPanorama": false,
-      "shadowDensity": 0.317,
-      "accent": "#b1c33c",
-      "commerce": {
-        "printSizes": [],
-        "substrates": [],
-        "pricePer": {},
-        "edition": null,
-        "printAdvisory": null
-      },
-      "renditions": [
-        {
-          "role": "display",
-          "colorSpace": "srgb",
-          "profile": null,
-          "path": "works/backyard-july/display-1600.jpg",
-          "dimensions": {
-            "width": 1800,
-            "height": 1286
-          }
-        }
-      ],
-      "web": {
-        "src": "works/backyard-july/display-1600.jpg",
-        "srcsetWebp": "works/backyard-july/display-400.webp 400w, works/backyard-july/display-800.webp 800w, works/backyard-july/display-1200.webp 1200w, works/backyard-july/display-1600.webp 1600w",
-        "largest": "works/backyard-july/display-1600.webp",
-        "buttonCrop": "works/backyard-july/button.jpg",
-        "navSample": "works/backyard-july/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABgQAAMBAQAAAAAAAAAAAAAAAAABEQIS/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8Ax7SmFmPog2I9Mngp9tdOASoDBX//2Q=="
-      },
-      "placeholder": true
-    },
-    {
-      "slug": "pier-in-winter",
-      "title": "Pier in Winter",
-      "category": "Film",
-      "caption": "Cold light on Tri-X.",
-      "sequence": 2,
-      "centerpieceEligible": false,
-      "alt": "Pier in Winter — placeholder image",
-      "cameraBody": null,
-      "lens": "70-200mm f/2.8",
-      "focalLength": "50mm",
-      "aperture": "f/8",
-      "shutter": "1/60",
-      "iso": 800,
-      "filmStock": "Kodak Tri-X 400",
-      "date": "2022",
-      "location": "Somewhere worth returning to",
-      "nativeAspect": 1.6,
-      "isPanorama": false,
-      "shadowDensity": 0.916,
-      "accent": "#4472bb",
-      "commerce": {
-        "printSizes": [],
-        "substrates": [],
-        "pricePer": {},
-        "edition": null,
-        "printAdvisory": null
-      },
-      "renditions": [
-        {
-          "role": "display",
-          "colorSpace": "srgb",
-          "profile": null,
-          "path": "works/pier-in-winter/display-1600.jpg",
-          "dimensions": {
-            "width": 1800,
-            "height": 1125
-          }
-        }
-      ],
-      "web": {
-        "src": "works/pier-in-winter/display-1600.jpg",
-        "srcsetWebp": "works/pier-in-winter/display-400.webp 400w, works/pier-in-winter/display-800.webp 800w, works/pier-in-winter/display-1200.webp 1200w, works/pier-in-winter/display-1600.webp 1600w",
-        "largest": "works/pier-in-winter/display-1600.webp",
-        "buttonCrop": "works/pier-in-winter/button.jpg",
-        "navSample": "works/pier-in-winter/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQb/xAAZEAACAwEAAAAAAAAAAAAAAAAAAQIRIRL/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A56zVzWkmxW2bhDSe4BOwIo//2Q=="
-      },
-      "placeholder": true
-    },
-    {
-      "slug": "portrait-window-light",
-      "title": "Portrait, Window Light",
-      "category": "Film",
-      "caption": "Soft falloff across the cheek.",
-      "sequence": 3,
-      "centerpieceEligible": true,
-      "alt": "Portrait, Window Light — placeholder image",
-      "cameraBody": null,
-      "lens": "16-35mm f/4",
-      "focalLength": "50mm",
-      "aperture": "f/11",
-      "shutter": "30s",
-      "iso": 3200,
-      "filmStock": "Ilford HP5",
-      "date": "2023",
-      "location": "Somewhere worth returning to",
-      "nativeAspect": 0.75,
-      "isPanorama": false,
-      "shadowDensity": 0.846,
-      "accent": "#c08b3f",
-      "commerce": {
-        "printSizes": [],
-        "substrates": [],
-        "pricePer": {},
-        "edition": null,
-        "printAdvisory": null
-      },
-      "renditions": [
-        {
-          "role": "display",
-          "colorSpace": "srgb",
-          "profile": null,
-          "path": "works/portrait-window-light/display-1600.jpg",
-          "dimensions": {
-            "width": 1350,
-            "height": 1800
-          }
-        }
-      ],
-      "web": {
-        "src": "works/portrait-window-light/display-1600.jpg",
-        "srcsetWebp": "works/portrait-window-light/display-400.webp 300w, works/portrait-window-light/display-800.webp 600w, works/portrait-window-light/display-1200.webp 900w, works/portrait-window-light/display-1600.webp 1200w",
-        "largest": "works/portrait-window-light/display-1600.webp",
-        "buttonCrop": "works/portrait-window-light/button.jpg",
-        "navSample": "works/portrait-window-light/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAZEAEBAQEBAQAAAAAAAAAAAAAAAQIRAyL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQP/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8A4a8ed1C+eNMekzGFaMdZsvArWpddAiCBCUAgI//Z"
-      },
-      "placeholder": true
-    },
-    {
-      "slug": "neon-rainy-night",
-      "title": "Neon, Rainy Night",
-      "category": "Film",
-      "caption": "Cinestill halation doing its thing.",
-      "sequence": 4,
-      "centerpieceEligible": false,
-      "alt": "Neon, Rainy Night — placeholder image",
-      "cameraBody": null,
-      "lens": "24-70mm f/2.8",
-      "focalLength": "50mm",
-      "aperture": "f/1.4",
-      "shutter": "1/2000",
-      "iso": 100,
-      "filmStock": "Cinestill 800T",
-      "date": "2024",
-      "location": "Somewhere worth returning to",
-      "nativeAspect": 1.5,
-      "isPanorama": false,
-      "shadowDensity": 0.911,
-      "accent": "#bc4374",
-      "commerce": {
-        "printSizes": [],
-        "substrates": [],
-        "pricePer": {},
-        "edition": null,
-        "printAdvisory": null
-      },
-      "renditions": [
-        {
-          "role": "display",
-          "colorSpace": "srgb",
-          "profile": null,
-          "path": "works/neon-rainy-night/display-1600.jpg",
-          "dimensions": {
-            "width": 1800,
-            "height": 1200
-          }
-        }
-      ],
-      "web": {
-        "src": "works/neon-rainy-night/display-1600.jpg",
-        "srcsetWebp": "works/neon-rainy-night/display-400.webp 400w, works/neon-rainy-night/display-800.webp 800w, works/neon-rainy-night/display-1200.webp 1200w, works/neon-rainy-night/display-1600.webp 1600w",
-        "largest": "works/neon-rainy-night/display-1600.webp",
-        "buttonCrop": "works/neon-rainy-night/button.jpg",
-        "navSample": "works/neon-rainy-night/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwb/xAAZEAEBAAMBAAAAAAAAAAAAAAAAAQIRITH/xAAVAQEBAAAAAAAAAAAAAAAAAAABBP/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDnvV4zHXWRW0VQds2EAUP/2Q=="
-      },
-      "placeholder": true
-    },
-    {
-      "slug": "field-road",
-      "title": "Field Road",
-      "category": "Film",
-      "caption": "Ektar holding the greens.",
-      "sequence": 5,
-      "centerpieceEligible": false,
-      "alt": "Field Road — placeholder image",
-      "cameraBody": null,
-      "lens": "35mm f/1.4",
-      "focalLength": "50mm",
-      "aperture": "f/2.8",
-      "shutter": "1/250",
-      "iso": 400,
-      "filmStock": "Kodak Ektar 100",
-      "date": "2020",
-      "location": "Somewhere worth returning to",
-      "nativeAspect": 2.2989,
-      "isPanorama": true,
-      "shadowDensity": 0.443,
-      "accent": "#64b649",
-      "commerce": {
-        "printSizes": [],
-        "substrates": [],
-        "pricePer": {},
-        "edition": null,
-        "printAdvisory": null
-      },
-      "renditions": [
-        {
-          "role": "display",
-          "colorSpace": "srgb",
-          "profile": null,
-          "path": "works/field-road/display-1600.jpg",
-          "dimensions": {
-            "width": 1800,
-            "height": 783
-          }
-        }
-      ],
-      "web": {
-        "src": "works/field-road/display-1600.jpg",
-        "srcsetWebp": "works/field-road/display-400.webp 400w, works/field-road/display-800.webp 800w, works/field-road/display-1200.webp 1200w, works/field-road/display-1600.webp 1600w",
-        "largest": "works/field-road/display-1600.webp",
-        "buttonCrop": "works/field-road/button.jpg",
-        "navSample": "works/field-road/navsample.jpg",
-        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAJABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAF/8QAGBABAQEBAQAAAAAAAAAAAAAAAAECEiH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8Aw7pdyDQooErr1AmxP//Z"
-      },
-      "placeholder": true
-    },
-    {
       "slug": "orion-nebula-2",
       "title": "Orion Nebula",
       "category": "Astro",
@@ -1270,7 +970,7 @@
     },
     {
       "slug": "tree",
-      "title": "Tree",
+      "title": "Lakeside Tree",
       "category": "Nature",
       "caption": null,
       "sequence": 6,
@@ -1418,6 +1118,643 @@
         "buttonCrop": "works/andromeda-galaxy-starless/button.jpg",
         "navSample": "works/andromeda-galaxy-starless/navsample.jpg",
         "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBv/EABoQAQEAAwEBAAAAAAAAAAAAAAEAAhExAxL/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AxgbdV5+fwdoHU3JesCiIg//Z"
+      }
+    },
+    {
+      "slug": "blue-and-gold",
+      "title": "Blue and Gold",
+      "category": "Film",
+      "caption": "Night time fireworks behind the castle",
+      "sequence": 0,
+      "centerpieceEligible": true,
+      "alt": "Blue and Gold",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": "2026",
+      "location": "Magic Kingdom",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.555,
+      "accent": "#f2aa62",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/blue-and-gold/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/blue-and-gold/display-1600.jpg",
+        "srcsetWebp": "works/blue-and-gold/display-400.webp 272w, works/blue-and-gold/display-800.webp 544w, works/blue-and-gold/display-1200.webp 816w, works/blue-and-gold/display-1600.webp 1088w",
+        "largest": "works/blue-and-gold/display-1600.webp",
+        "buttonCrop": "works/blue-and-gold/button.jpg",
+        "navSample": "works/blue-and-gold/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDBAX/xAAfEAABBAMAAwEAAAAAAAAAAAABAAIDBBETIRIUMVH/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQID/8QAGREBAQADAQAAAAAAAAAAAAAAAQACERIh/9oADAMBAAIRAxEAPwDjWpn73dSNmf8Aq1ur+czs/UnpvB+IoQFttSV2gdQq1arxCOIU2V5bC6YtsnCqb5zjCSaECdxyk0jOcrDiLdDPy69a4dI4hSrRjUOoTkp3f//Z"
+      }
+    },
+    {
+      "slug": "lights",
+      "title": "Lights",
+      "category": "Film",
+      "caption": "soft bokeh from main street",
+      "sequence": 1,
+      "centerpieceEligible": true,
+      "alt": "Lights",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": null,
+      "location": "Magic Kingdom",
+      "nativeAspect": 1.4706,
+      "isPanorama": false,
+      "shadowDensity": 0.72,
+      "accent": "#f4d57b",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/lights/display-1600.jpg",
+          "dimensions": {
+            "width": 1600,
+            "height": 1088
+          }
+        }
+      ],
+      "web": {
+        "src": "works/lights/display-1600.jpg",
+        "srcsetWebp": "works/lights/display-400.webp 400w, works/lights/display-800.webp 800w, works/lights/display-1200.webp 1200w, works/lights/display-1600.webp 1600w",
+        "largest": "works/lights/display-1600.webp",
+        "buttonCrop": "works/lights/button.jpg",
+        "navSample": "works/lights/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAdEAACAgMAAwAAAAAAAAAAAAABAgADBBESEyEi/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/8QAFxEBAQEBAAAAAAAAAAAAAAAAACEBEf/aAAwDAQACEQMRAD8AhzGsRiQ0nFuRoHfqPyMd2c/cz4H556EzTHRxb2agEmERRQ4rA7hDmqP/2Q=="
+      }
+    },
+    {
+      "slug": "tiki-room",
+      "title": "Tiki Room",
+      "category": "Film",
+      "caption": "Tiki Room at Sunset",
+      "sequence": 7,
+      "centerpieceEligible": true,
+      "alt": "Tiki Room",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": "2026",
+      "location": "Magic Kingdom",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.13,
+      "accent": "#e49151",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/tiki-room/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/tiki-room/display-1600.jpg",
+        "srcsetWebp": "works/tiki-room/display-400.webp 272w, works/tiki-room/display-800.webp 544w, works/tiki-room/display-1200.webp 816w, works/tiki-room/display-1600.webp 1088w",
+        "largest": "works/tiki-room/display-1600.webp",
+        "buttonCrop": "works/tiki-room/button.jpg",
+        "navSample": "works/tiki-room/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAAAAQFAQID/8QAIRAAAgEEAgIDAAAAAAAAAAAAAQIAAwQREhMhIiMxMkH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAXEQEBAQEAAAAAAAAAAAAAAAAAEQEC/9oADAMBAAIRAxEAPwC6wO0B3+wuHVVY57ilhX5HYMZVZ5yooDrCZV0x9hCFMQL27DbYaI2tVtzhsCaXFPNU+RnPjx8MRJaL9Eg0xmp3CIWyekeRhAP/2Q=="
+      }
+    },
+    {
+      "slug": "branches",
+      "title": "Branches",
+      "category": "Film",
+      "caption": "Tree overlooking small field",
+      "sequence": 8,
+      "centerpieceEligible": true,
+      "alt": "Branches",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": "2026",
+      "location": "Orlando",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.248,
+      "accent": "#9bbc43",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/branches/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/branches/display-1600.jpg",
+        "srcsetWebp": "works/branches/display-400.webp 272w, works/branches/display-800.webp 544w, works/branches/display-1200.webp 816w, works/branches/display-1600.webp 1088w",
+        "largest": "works/branches/display-1600.webp",
+        "buttonCrop": "works/branches/button.jpg",
+        "navSample": "works/branches/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIEBQED/8QAHhAAAgICAwEBAAAAAAAAAAAAAQIAAwQRBRMhFFH/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAYEQEBAQEBAAAAAAAAAAAAAAAAARESIf/aAAwDAQACEQMRAD8Aysm1+9vYWx/2aGVxVnYWAlT5bEbREVJ60cVmNA2Ynpi0P0jYiZHLuRdbCDK7ZwL7Ikbqw1p9kkxEY+mZ2klX6c3dYIERTiotYG4jpcr/2Q=="
+      }
+    },
+    {
+      "slug": "celebration",
+      "title": "Celebration",
+      "category": "Film",
+      "caption": "Fireworks over Cinderella' castle (Portrait)",
+      "sequence": 9,
+      "centerpieceEligible": true,
+      "alt": "Celebration",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": "2026",
+      "location": "Magic Kingdom",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.552,
+      "accent": "#f4b777",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/celebration/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/celebration/display-1600.jpg",
+        "srcsetWebp": "works/celebration/display-400.webp 272w, works/celebration/display-800.webp 544w, works/celebration/display-1200.webp 816w, works/celebration/display-1600.webp 1088w",
+        "largest": "works/celebration/display-1600.webp",
+        "buttonCrop": "works/celebration/button.jpg",
+        "navSample": "works/celebration/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIFAwH/xAAeEAABBQEBAAMAAAAAAAAAAAABAAIDBBETIRIiMf/EABYBAQEBAAAAAAAAAAAAAAAAAAACAf/EABcRAQEBAQAAAAAAAAAAAAAAAAARAQL/2gAMAwEAAhEDEQA/AJluw4TkApGWHjzUlhhdO5cjjIPoRsW6f2rgk+oSVt4jAhS2JskzWWDoW4swuwYsrFdvcnUrK7fl+puUzqLVaaLkMCFnWibxCFMVX//Z"
+      }
+    },
+    {
+      "slug": "path",
+      "title": "Path",
+      "category": "Film",
+      "caption": "Walking Path",
+      "sequence": 10,
+      "centerpieceEligible": true,
+      "alt": "Path",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": "2026",
+      "location": "Orlando",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.087,
+      "accent": "#c6ec13",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/path/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/path/display-1600.jpg",
+        "srcsetWebp": "works/path/display-400.webp 272w, works/path/display-800.webp 544w, works/path/display-1200.webp 816w, works/path/display-1600.webp 1088w",
+        "largest": "works/path/display-1600.webp",
+        "buttonCrop": "works/path/button.jpg",
+        "navSample": "works/path/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAgEAACAgIBBQEAAAAAAAAAAAAAAQIDBBESBRMUITEi/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAEDAv/EABgRAQEBAQEAAAAAAAAAAAAAAAARAQIS/9oADAMBAAIRAxEAPwC7OL5Gfn1jTim3pogdTyp13aT0thvUY81bgvyBwwbueNGTfsAoiJ52Qrmk3oUyrJXz3J+x+vHjyk9id1KVj0yXVUNYd1kKEkwN40F2kArpV//Z"
+      }
+    },
+    {
+      "slug": "castle",
+      "title": "Castle",
+      "category": "Film",
+      "caption": "Cinderella's Castle",
+      "sequence": 11,
+      "centerpieceEligible": true,
+      "alt": "Castle",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": "2026",
+      "location": "Magic Kingdom",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.123,
+      "accent": "#d4f47b",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/castle/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/castle/display-1600.jpg",
+        "srcsetWebp": "works/castle/display-400.webp 272w, works/castle/display-800.webp 544w, works/castle/display-1200.webp 816w, works/castle/display-1600.webp 1088w",
+        "largest": "works/castle/display-1600.webp",
+        "buttonCrop": "works/castle/button.jpg",
+        "navSample": "works/castle/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUB/8QAHxAAAgICAgMBAAAAAAAAAAAAAAECAwQSESETIjFR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwEA/8QAFxEBAQEBAAAAAAAAAAAAAAAAABEBEv/aAAwDAQACEQMRAD8Abuct32Q5l+lt/UmymuWzE6DzpulvRATqXogJWjLzMtOT1YnVluMzl9Kdz7ZV4Fz9Dp5jdoyVKpPkBTGrSpXbAlSY/9k="
+      }
+    },
+    {
+      "slug": "lakeside-tree-film",
+      "title": "Lakeside Tree (Film)",
+      "category": "Film",
+      "caption": null,
+      "sequence": 12,
+      "centerpieceEligible": true,
+      "alt": "Lakeside Tree (Film)",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": null,
+      "location": "Orlando",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.087,
+      "accent": "#7ebbd2",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/lakeside-tree-film/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/lakeside-tree-film/display-1600.jpg",
+        "srcsetWebp": "works/lakeside-tree-film/display-400.webp 272w, works/lakeside-tree-film/display-800.webp 544w, works/lakeside-tree-film/display-1200.webp 816w, works/lakeside-tree-film/display-1600.webp 1088w",
+        "largest": "works/lakeside-tree-film/display-1600.webp",
+        "buttonCrop": "works/lakeside-tree-film/button.jpg",
+        "navSample": "works/lakeside-tree-film/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAUCBAYD/8QAHxAAAgMBAAEFAAAAAAAAAAAAAQIAAwQREwUSIzFx/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDAP/EABgRAAMBAQAAAAAAAAAAAAAAAAABEQIh/9oADAMBAAIRAxEAPwBtpc19JlSrcGf2kzt6qwVfuJFf5R+zPccJrFRqKulAQYQycOdYR6LDKatF73FW6RJVKRwkSxfWPMTBV6ZFvpUZ5dLCkCEnmoXwiENYYf/Z"
+      }
+    },
+    {
+      "slug": "neighborhood-walk",
+      "title": "Neighborhood Walk",
+      "category": "Film",
+      "caption": "Simple walking path",
+      "sequence": 13,
+      "centerpieceEligible": true,
+      "alt": "Neighborhood Walk",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": "2026",
+      "location": "Orlando",
+      "nativeAspect": 0.7438,
+      "isPanorama": false,
+      "shadowDensity": 0.151,
+      "accent": "#c4c03b",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/neighborhood-walk/display-1600.jpg",
+          "dimensions": {
+            "width": 1190,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/neighborhood-walk/display-1600.jpg",
+        "srcsetWebp": "works/neighborhood-walk/display-400.webp 298w, works/neighborhood-walk/display-800.webp 595w, works/neighborhood-walk/display-1200.webp 893w, works/neighborhood-walk/display-1600.webp 1190w",
+        "largest": "works/neighborhood-walk/display-1600.webp",
+        "buttonCrop": "works/neighborhood-walk/button.jpg",
+        "navSample": "works/neighborhood-walk/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAbABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAAFAv/EACEQAAEEAgEFAQAAAAAAAAAAAAEAAgMEESETEhUiMTJS/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQACA//EABcRAQEBAQAAAAAAAAAAAAAAAAABETH/2gAMAwEAAhEDEQA/AM+xNI2Y4ck1DPK4DaPZjxZK0qFqOs3Lhtcb1NSGo4RjLtqRe6h2x6Ut4mTYcDMdLh2C1PfGzkPiFcbPyEyAaGIcYUnxxt6PkKQMf//Z"
+      }
+    },
+    {
+      "slug": "light-beam",
+      "title": "Light Beam",
+      "category": "Film",
+      "caption": "Just a neat film artifact",
+      "sequence": 14,
+      "centerpieceEligible": false,
+      "alt": "Light Beam",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": null,
+      "location": "Orlando",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.783,
+      "accent": "#c68c61",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/light-beam/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/light-beam/display-1600.jpg",
+        "srcsetWebp": "works/light-beam/display-400.webp 272w, works/light-beam/display-800.webp 544w, works/light-beam/display-1200.webp 816w, works/light-beam/display-1600.webp 1088w",
+        "largest": "works/light-beam/display-1600.webp",
+        "buttonCrop": "works/light-beam/button.jpg",
+        "navSample": "works/light-beam/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEBQL/xAAfEAACAwACAgMAAAAAAAAAAAAAAQIDBBEhE1EUIzP/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDH13TV8uxSvn7Ota++QpIo18lsnQuwOcn4IAJ9sq/NLgmi489lerPF3PsV8aPskWtPI6/AgDLQlSuwEK//2Q=="
+      }
+    },
+    {
+      "slug": "starlight",
+      "title": "Starlight",
+      "category": "Film",
+      "caption": "Starlight Parade",
+      "sequence": 15,
+      "centerpieceEligible": false,
+      "alt": "Starlight",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": "2026",
+      "location": "Magic Kindgom",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.766,
+      "accent": "#2774d8",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/starlight/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/starlight/display-1600.jpg",
+        "srcsetWebp": "works/starlight/display-400.webp 272w, works/starlight/display-800.webp 544w, works/starlight/display-1200.webp 816w, works/starlight/display-1600.webp 1088w",
+        "largest": "works/starlight/display-1600.webp",
+        "buttonCrop": "works/starlight/button.jpg",
+        "navSample": "works/starlight/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMBBAUC/8QAHhAAAgMBAQADAQAAAAAAAAAAAAECAwQRIRMxUUH/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQEBAQEAAAAAAAAAAAAAAAAAERIh/9oADAMBAAIRAxEAPwDC13T+eXotXWfpc0Rqdr79ipZ+x7E1niVfyWydC9AjJBqlLgGRl6pNaJE13yj/AEs6s0XfL04WaP6KNDLb2lPgDMtEVSvQJVf/2Q=="
+      }
+    },
+    {
+      "slug": "castle-fireworks",
+      "title": "Castle fireworks",
+      "category": "Film",
+      "caption": "Fireworks over Cinderella's Castle (Landscape",
+      "sequence": 16,
+      "centerpieceEligible": true,
+      "alt": "Castle fireworks",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": null,
+      "location": "Magic Kindgom",
+      "nativeAspect": 1.4706,
+      "isPanorama": false,
+      "shadowDensity": 0.597,
+      "accent": "#f4897b",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/castle-fireworks/display-1600.jpg",
+          "dimensions": {
+            "width": 1600,
+            "height": 1088
+          }
+        }
+      ],
+      "web": {
+        "src": "works/castle-fireworks/display-1600.jpg",
+        "srcsetWebp": "works/castle-fireworks/display-400.webp 400w, works/castle-fireworks/display-800.webp 800w, works/castle-fireworks/display-1200.webp 1200w, works/castle-fireworks/display-1600.webp 1600w",
+        "largest": "works/castle-fireworks/display-1600.webp",
+        "buttonCrop": "works/castle-fireworks/button.jpg",
+        "navSample": "works/castle-fireworks/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAEEAwX/xAAdEAACAgIDAQAAAAAAAAAAAAAAAQMEAhMRITEi/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgED/8QAFxEBAQEBAAAAAAAAAAAAAAAAEQABIf/aAAwDAQACEQMRAD8A5bsTbW1kxyW5WvWUOrxM+x5VUB7aYBZwWZda7YFMVX49ArAv/9k="
+      }
+    },
+    {
+      "slug": "colonial",
+      "title": "Colonial",
+      "category": "Film",
+      "caption": "Colonial Style Architecture",
+      "sequence": 17,
+      "centerpieceEligible": true,
+      "alt": "Colonial",
+      "cameraBody": "Nikon n90s",
+      "lens": "Nikkor 28-85mm f/3.5-5.6",
+      "focalLength": null,
+      "aperture": null,
+      "shutter": null,
+      "iso": null,
+      "filmStock": "Kodak Gold 200",
+      "date": "2026",
+      "location": "Magic Kindgom",
+      "nativeAspect": 0.68,
+      "isPanorama": false,
+      "shadowDensity": 0.075,
+      "accent": "#ef623d",
+      "commerce": {
+        "printSizes": [],
+        "substrates": [],
+        "pricePer": {},
+        "edition": null,
+        "printAdvisory": null
+      },
+      "renditions": [
+        {
+          "role": "display",
+          "colorSpace": "srgb",
+          "profile": null,
+          "path": "works/colonial/display-1600.jpg",
+          "dimensions": {
+            "width": 1088,
+            "height": 1600
+          }
+        }
+      ],
+      "web": {
+        "src": "works/colonial/display-1600.jpg",
+        "srcsetWebp": "works/colonial/display-400.webp 272w, works/colonial/display-800.webp 544w, works/colonial/display-1200.webp 816w, works/colonial/display-1600.webp 1088w",
+        "largest": "works/colonial/display-1600.webp",
+        "buttonCrop": "works/colonial/button.jpg",
+        "navSample": "works/colonial/navsample.jpg",
+        "placeholder": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAdABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAECBAUD/8QAHxAAAgIDAAIDAAAAAAAAAAAAAAECAwQREwUiEiFR/8QAGAEAAwEBAAAAAAAAAAAAAAAAAQMEAAL/xAAZEQADAQEBAAAAAAAAAAAAAAAAARECEhP/2gAMAwEAAhEDEQA/AJ3Rl0f2Q+Mv0vW1+7I8hlFQVEZc0Baqr9EAKEz8rP52NaFj+QjN6kV/JVJ3N7FiYkJRbbeyfpylOspOG3VdBwWgOFFKVaWwN2znzR//2Q=="
       }
     }
   ]

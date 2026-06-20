@@ -46,6 +46,11 @@
     .astro-panel.open { display:grid; }
     .astro-panel label { font-size:.78rem; }
     .astro-panel .check-label { flex-direction:row; align-items:center; gap:.4rem; }
+    .edit-panel { flex-basis:100%; display:none; background:var(--surface); border-radius:6px; padding:.7rem .8rem; margin-top:.3rem; gap:.5rem .7rem; }
+    .edit-panel.open { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); }
+    .edit-panel label { font-size:.78rem; }
+    .edit-panel .full { grid-column:1/-1; }
+    .edit-panel .row-btns { grid-column:1/-1; display:flex; gap:.5rem; margin-top:.2rem; }
   </style>
 </head>
 <body>
@@ -55,6 +60,7 @@
     <span style="flex:1"></span>
     <button id="fill">Fill empty categories</button>
     <button id="refresh">Refresh</button>
+    <button id="clear-memory" title="Forget remembered camera / lens / film values">Clear memory</button>
   </header>
 
   <main>
@@ -152,10 +158,29 @@
         </div>
         <div class="controls">
           ${isAstro?`<button title="Astro settings" data-astro="${w.slug}">⚙</button>`:''}
+          <button title="Edit metadata" data-edit="${w.slug}">✎</button>
           <button title="Move up" data-up="${w.slug}">↑</button>
           <button title="Move down" data-down="${w.slug}">↓</button>
           <button title="Toggle centerpiece" data-ce="${w.slug}">★</button>
           <button class="danger" title="Delete" data-del="${w.slug}">✕</button>
+        </div>
+        <div class="edit-panel" id="ep-${w.slug}">
+          <label class="full">Title<input name="title" value="${esc(w.title||'')}" /></label>
+          <label class="full">Caption<input name="caption" value="${esc(w.caption||'')}" /></label>
+          <label>Category<select name="category">${CATS.map(c=>`<option${c===w.category?' selected':''}>${c}</option>`).join('')}</select></label>
+          <label>Location<input name="location" value="${esc(w.location||'')}" /></label>
+          <label>Date<input name="date" value="${esc(w.date||'')}" /></label>
+          <label>Camera body<input name="cameraBody" value="${esc(w.cameraBody||'')}" /></label>
+          <label>Lens<input name="lens" value="${esc(w.lens||'')}" /></label>
+          <label>Focal length<input name="focalLength" value="${esc(w.focalLength||'')}" /></label>
+          <label>Aperture<input name="aperture" value="${esc(w.aperture||'')}" /></label>
+          <label>Shutter<input name="shutter" value="${esc(w.shutter||'')}" /></label>
+          <label>ISO<input name="iso" value="${esc(w.iso||'')}" /></label>
+          <label>Film stock<input name="filmStock" value="${esc(w.filmStock||'')}" /></label>
+          <div class="row-btns">
+            <button data-save-edit="${w.slug}" class="primary">Save</button>
+            <button data-cancel-edit="${w.slug}">Cancel</button>
+          </div>
         </div>
         ${isAstro?`<div class="astro-panel" id="ap-${w.slug}">
           <label>Horizontal FOV°<input type="number" name="fovDeg" value="${w.fovDeg??''}" step="0.1" min="0.01" max="180" placeholder="e.g. 2.5" /></label>
@@ -168,6 +193,33 @@
       row.querySelector('[data-down]').onclick = () => move(w.slug,1);
       row.querySelector('[data-ce]').onclick = async () => { await api('PATCH',`/api/works/${w.slug}`,{centerpieceEligible:!w.centerpieceEligible}); render(); };
       row.querySelector('[data-del]').onclick = async () => { if(confirm(`Delete "${w.title}"?`)){ await api('DELETE',`/api/works/${w.slug}`); toast('Deleted'); render(); } };
+      row.querySelector('[data-edit]').onclick = () => {
+        document.getElementById(`ep-${w.slug}`).classList.toggle('open');
+      };
+      row.querySelector('[data-cancel-edit]').onclick = () => {
+        document.getElementById(`ep-${w.slug}`).classList.remove('open');
+      };
+      row.querySelector('[data-save-edit]').onclick = async () => {
+        const panel = document.getElementById(`ep-${w.slug}`);
+        const get = (name) => panel.querySelector(`[name="${name}"]`).value.trim() || null;
+        const patch = {
+          title:       get('title') || 'Untitled',
+          caption:     get('caption'),
+          category:    panel.querySelector('[name="category"]').value,
+          location:    get('location'),
+          date:        get('date'),
+          cameraBody:  get('cameraBody'),
+          lens:        get('lens'),
+          focalLength: get('focalLength'),
+          aperture:    get('aperture'),
+          shutter:     get('shutter'),
+          iso:         get('iso') ? Number(get('iso')) : null,
+          filmStock:   get('filmStock'),
+        };
+        await api('PATCH', `/api/works/${w.slug}`, patch);
+        toast('Saved');
+        render();
+      };
       row.querySelector('[data-astro]')?.addEventListener('click', () => {
         const panel = document.getElementById(`ap-${w.slug}`);
         if (panel) panel.classList.toggle('open');
@@ -186,8 +238,67 @@
     async function move(slug,dir){ await api('POST','/api/reorder',{slug,dir}); render(); }
     const esc = (s)=>String(s||'').replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
 
+    // --- Persistent form memory ---
+    // STICKY fields: auto-restored after every submit (same-session and across page loads)
+    // HISTORY fields: also populate a <datalist> for autocomplete but not pre-filled
+    const STICKY  = ['category','cameraBody','lens','focalLength','filmStock','location'];
+    const HISTORY = ['cameraBody','lens','focalLength','aperture','iso','filmStock'];
+
+    function memLoad() {
+      const sticky = JSON.parse(localStorage.getItem('tool-sticky') || '{}');
+      STICKY.forEach(id => {
+        const el = $('#' + id);
+        if (el && sticky[id] != null) el.value = sticky[id];
+      });
+      _buildDataLists();
+    }
+
+    function memSave(vals) {
+      const sticky = JSON.parse(localStorage.getItem('tool-sticky') || '{}');
+      const hist   = JSON.parse(localStorage.getItem('tool-history') || '{}');
+      STICKY.forEach(id  => { if (vals[id]) sticky[id] = vals[id]; });
+      HISTORY.forEach(id => {
+        if (!vals[id]) return;
+        hist[id] = [...new Set([vals[id], ...(hist[id] || [])])].slice(0, 12);
+      });
+      localStorage.setItem('tool-sticky',  JSON.stringify(sticky));
+      localStorage.setItem('tool-history', JSON.stringify(hist));
+      _buildDataLists();
+    }
+
+    function memClear() {
+      localStorage.removeItem('tool-sticky');
+      localStorage.removeItem('tool-history');
+      HISTORY.forEach(id => {
+        const input = $('#' + id);
+        if (input) input.removeAttribute('list');
+        const dl = document.getElementById('dl-' + id);
+        if (dl) dl.remove();
+      });
+      toast('Form memory cleared');
+    }
+
+    function _buildDataLists() {
+      const hist = JSON.parse(localStorage.getItem('tool-history') || '{}');
+      HISTORY.forEach(id => {
+        const input = $('#' + id);
+        if (!input || !hist[id]?.length) return;
+        let dl = document.getElementById('dl-' + id);
+        if (!dl) {
+          dl = document.createElement('datalist');
+          dl.id = 'dl-' + id;
+          input.after(dl);
+          input.setAttribute('list', 'dl-' + id);
+        }
+        dl.innerHTML = hist[id].map(v => `<option value="${v.replace(/"/g,'&quot;')}">`).join('');
+      });
+    }
+
+    memLoad();
+
     $('#fill').onclick = async () => { const r=await api('POST','/api/placeholders/fill',{}); toast(`Added ${r.added.length} placeholders`); render(); };
     $('#refresh').onclick = render;
+    document.getElementById('clear-memory').onclick = memClear;
 
     document.addEventListener('click', async (e) => {
       const cat = e.target?.dataset?.add;
@@ -253,8 +364,11 @@
         if (r.mastersStored) msg += ` · ${r.mastersStored} master(s) → ${r.mastersDir}`;
         toast(msg);
         if (r.rightsWarning) { console.warn(r.rightsWarning); alert('Rights metadata NOT embedded:\n\n' + r.rightsWarning); }
+        memSave(payload);          // persist equipment fields before reset wipes them
         $('#masters').innerHTML = '';
-        e.target.reset(); render();
+        e.target.reset();
+        memLoad();                 // restore sticky fields so next ingest is pre-filled
+        render();
       }
       catch (err) { toast('Error: '+err.message); }
     };

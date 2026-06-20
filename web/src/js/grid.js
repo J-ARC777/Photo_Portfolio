@@ -128,6 +128,7 @@ function renderGrid(gridEl, works, isResize) {
   const max = numVar('--row-max', 460);
 
   const rows = justify(works, width, gutter, target, min, max);
+  const restoreIndex = isResize ? currentIndex : -1; // capture before innerHTML wipes the band
   gridEl.innerHTML = '';
   let idx = 0;
   rows.forEach((r) => {
@@ -140,6 +141,8 @@ function renderGrid(gridEl, works, isResize) {
     });
     gridEl.appendChild(rowEl);
   });
+  // re-insert the open detail band after the rows are rebuilt
+  if (restoreIndex >= 0) openDetail(works, restoreIndex, gridEl, true);
 }
 
 function makeCell(w, width, isLastRow, gridEl, works, fadeIndex) {
@@ -172,9 +175,10 @@ function makeCell(w, width, isLastRow, gridEl, works, fadeIndex) {
 }
 
 // --- in-place detail band: opens its own full-width row (§5.5) ---
-let currentBand = null;
+let currentBand  = null;
+let currentIndex = -1;
 
-function openDetail(works, index, gridEl) {
+function openDetail(works, index, gridEl, noScroll = false) {
   const work = works[index];
   // find the grid row holding this work's cell, insert band right after it
   const rowEls = [...gridEl.querySelectorAll('.grid__row')];
@@ -192,12 +196,16 @@ function openDetail(works, index, gridEl) {
     onNext: () => step(works, index, +1, gridEl),
     onClose: closeDetail,
   });
+  if (noScroll) band.style.animation = 'none'; // skip slide-in on resize re-render
   afterRow.after(band);
-  currentBand = band;
+  currentBand  = band;
+  currentIndex = index;
   bindKeys(works, index, gridEl);
-  // center the band in the viewport after layout settles (esp. for ?lead opens)
-  requestAnimationFrame(() =>
-    band.scrollIntoView({ behavior: prefersReduced() ? 'auto' : 'smooth', block: 'center' }));
+  if (!noScroll) {
+    // center the band in the viewport after layout settles (esp. for ?lead opens)
+    requestAnimationFrame(() =>
+      band.scrollIntoView({ behavior: prefersReduced() ? 'auto' : 'smooth', block: 'center' }));
+  }
 }
 
 function step(works, index, dir, gridEl) {
@@ -207,7 +215,8 @@ function step(works, index, dir, gridEl) {
 
 function closeDetail() {
   currentBand?.remove();
-  currentBand = null;
+  currentBand  = null;
+  currentIndex = -1;
   document.removeEventListener('keydown', keyHandler);
 }
 

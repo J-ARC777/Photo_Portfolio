@@ -272,7 +272,7 @@ function startStarfield() {
     canvas.height = Math.max(1, h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     seed();
-    if (REDUCED) paint(0, 0); // single static composite
+    paint(tx, ty); // repaint immediately — avoids a blank frame when mobile browser chrome shows/hides
   }
 
   // parallax computed RELATIVE TO THE HERO BOX, not the window

@@ -1,6 +1,6 @@
 @import "./tokens.css";
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 html, body {
   margin: 0;
@@ -10,6 +10,7 @@ html, body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overscroll-behavior: none;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -389,7 +390,7 @@ picture { display: contents; }
 /* ---------- Detail band (§5.5) ---------- */
 .detail {
   display: grid;
-  grid-template-columns: 1fr 33.33vw;
+  grid-template-columns: 1fr 33.33%;
   gap: 0;
   justify-content: center;
   align-items: stretch;
@@ -408,14 +409,13 @@ picture { display: contents; }
   display: flex;
   align-items: center;
   justify-content: center;
+  clip-path: inset(0 round 8px);   /* GPU clip at container level — avoids seam between JPEG black and CSS black */
 }
 .detail__img img {
   max-width: 100%;
   max-height: 84vh;
   width: auto; height: auto;     /* native aspect always restored (§5.5) */
   object-fit: contain;
-  border-radius: 8px;
-  clip-path: inset(0 round 8px);
 }
 /* the image/info seam — the one hairline that protects the photo edge (§4.3) */
 .detail__info {
